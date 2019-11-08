@@ -2,14 +2,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:800|Poppins:300,400,500,600,700,800|Roboto:300,400,500");
 /* line 2, E:/172 Etrain Education/172_Etrain_Education_html/sass/_extends.scss */
 .btn_1, .btn_2:hover, .main_menu .navbar-toggler:after, .banner_part .banner_text .btn_1, .feature_part .single_feature:hover span {
-  background-image: linear-gradient(to left, #ee390f 0%, #f9b700 51%, #ee390f 100%);
+  background-image: linear-gradient(to left, #9ff669 0%, #31de79 51%, #9ff669 100%);
 }
 
 /* line 6, E:/172 Etrain Education/172_Etrain_Education_html/sass/_extends.scss */
 .member_counter {
-  background-image: -moz-linear-gradient(0deg, #ee390f 0%, #f9b700 100%);
-  background-image: -webkit-linear-gradient(0deg, #ee390f 0%, #f9b700 100%);
-  background-image: -ms-linear-gradient(0deg, #ee390f 0%, #f9b700 100%);
+  background-image: -moz-linear-gradient(0deg, #9ff669 0%, #31de79 100%);
+  background-image: -webkit-linear-gradient(0deg, #9ff669 0%, #31de79 100%);
+  background-image: -ms-linear-gradient(0deg, #9ff669 0%, #31de79 100%);
 }
 
 /**************** extend css start ****************/
@@ -277,7 +277,7 @@ a:focus, .button:focus, button:focus, .btn:focus {
   text-align: center;
   width: 80px;
   height: 2px;
-  background-color: #ff663b;
+  background-color: #9ff669;
 }
 
 @media (max-width: 576px) {
@@ -3376,7 +3376,7 @@ ul {
   height: 2px;
   width: 60px;
   content: "";
-  background-color: #ff663b;
+  background-color: #9ff669;
 }
 
 /* line 101, E:/172 Etrain Education/172_Etrain_Education_html/sass/_learning.scss */
@@ -4013,7 +4013,7 @@ ul {
 
 /* line 42, E:/172 Etrain Education/172_Etrain_Education_html/sass/_special_cource.scss */
 .special_cource .single_special_cource .special_cource_text {
-  padding: 35px 35px 40px;
+  padding: 10px 35px 40px;
   border: 1px solid #edeff2;
   border-top: 0px;
 }

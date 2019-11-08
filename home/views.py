@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from .models import ModelContact
 
 
 def home(request):
@@ -10,3 +12,10 @@ def home(request):
     # obj = obj.values()
     # return HttpResponse('<h1> ¿hola te gusta mi pagina? </h1>')
     return render(request, 'home/index.html', {'mobile': mobile})
+
+
+def contact(request):
+    name = request.POST.get('username', '')
+    email = request.POST.get('email', '')
+    ModelContact.objects.get_or_create(name=name, email=email)
+    return JsonResponse({'status':'ok'})

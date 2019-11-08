@@ -1,0 +1,393 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block title %}
+    <title>Dojopy</title>
+    {% endblock %}
+    <link rel="icon" href="/static/base/img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/base/css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="/static/base/css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="/static/base/css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="/static/base/css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="/static/base/css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="/static/base/css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="/static/base/css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="/static/base/css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    {% block preview_fb %}
+        <!--FACEBOOK-->
+        <meta property="og:image" content="/static/base/local/company_blank_logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="500">
+        <meta property="og:image:height" content="500">
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.dojopy.com"/>
+        <meta property="og:title" content="Dojopy"/>
+        <meta property="og:description" content="" />
+    {% endblock %}
+
+
+    <style media="screen">
+            .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#25d366;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        font-size:30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index:100;
+        }
+
+        .my-float{
+        margin-top:16px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="/"> <img src="/static/base/img/dojopy-logo.png" alt="logo" width="180"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/mentor">Dojopy Mentor</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/startup">Dojopy Startup</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Blog</a>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    <a class="btn_1" href="#connect">Unete a Dojopy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="item_notif">
+        </div>
+
+    </header>
+    <!-- Header part end-->
+
+{% block main_content %}
+    <!-- banner part start-->
+    <section class="banner_part" id="dojopy">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-xl-6">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h1>Dojopy Startup</h1>
+                            <h2>Aprende a programar creando una Startup.</h2>
+                            <p><i> Now is better than never</i> </p>
+                            <p><i> - Zen Python</i> </p>
+                            <a href="#connect" class="btn_1">Unete a Dojopy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner part start-->
+{% endblock %}
+
+
+{% block info_dojopy %}
+    <!-- learning part start-->
+    <section class="learning_part">
+        <div class="container">
+            <div class="row align-items-sm-center align-items-lg-stretch">
+                <div class="col-md-7 col-lg-7">
+                    <div class="learning_img">
+                        <img src="/static/base/img/learning_img.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <div class="learning_member_text">
+                        <h5>Dojopy Startup</h5>
+                        <h2>¿QUÉ ES DOJOPY STARTUP?</h2>
+                        <p style="font-size:1.3rem">
+                    Dojopy nace con la visión de aprender a programar como un ninja creando una startup real
+                    o partiendo de una idea y llevarlo a la acción a través del <a target="_blank" href="https://sg.com.mx/revista/31/minimo-producto-viable-que-es-y-para-que">MVP(producto mínimo viable)</a> .
+                        </p>
+                        <!-- <a href="#" class="btn_1">Read More</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- learning part end-->
+    {% endblock %}
+
+{% block stack_it %}
+    <!-- learning part start-->
+    <section class="learning_part" >
+        <div class="container">
+            <div class="row align-items-sm-center align-items-lg-stretch">
+                <div class="col-md-7 col-lg-7">
+                    <div class="learning_img">
+                        <img src="/static/base/img/stack-dojopy.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <div class="learning_member_text">
+                        <h5>STACK DE TECNOLOGÍAS</h5>
+                        <h2>¿QUÉ TECNOLOGÍAS   USAMOS?</h2>
+                        <p style="font-size:1.3rem">
+                            Dojopy usa múltiples tecnologías en su Stack ya sea en Frontend o Backend
+                             sin embargo Python es uno de los lenguajes de programación más valorados de los últimos años
+                              multitud de empresas, grandes y pequeñas lo utilizan en su día a día como
+                                 Instagram, Spotify, Amazon, Netflix, Google, Facebook, Dropbox, Youtube, etc. <br><br>
+                            Gracias a Python y su enorme comunidad que lo respalda el desarrollo de software es ágil y
+                             productivo para tu proyecto, prototipando rápidamente tus ideas.<br>
+                            Es por ello que es el lenguaje y stack favorito en
+                            <span style="color:green">Dojo</span><span style="color:brown">py</span> (<span style="color:green">Dojo</span>   + <span style="color:brown">Python</span>) ❤️
+
+
+                        </p>
+                        <!-- <a href="#" class="btn_1">Read More</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- learning part end-->
+{% endblock %}
+
+    <section class="learning_part" id="connect">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5">
+                    <div class="section_tittle text-center">
+                        <p><i> Now is better than never</i> </p>
+                        <p><i> Zen Python</i> </p>
+                        <h2>Unete a Dojopy</h2>
+                    </div>
+                </div>
+                <div class="col-10">
+                </div>
+                <div class="col-7">
+                    <input type="text" id="username" name="name" placeholder="Tu Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu Nombre'" required="" class="single-input" style=" border:1px solid #9ff669;" >
+                    <br>
+                    <input type="text" id="email" name="email" placeholder="Tu Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu Email'" required="" class="single-input" style=" border:1px solid #9ff669;">
+                    <br>
+                </div>
+                <div class="col-10">
+                </div>
+                <button id="join_dojopy" class="col-4 btn btn_1" type="button">Enviar  <i class="ti-angle-right"></i></button>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% block cont_mentores %}
+    <!-- member_counter counter start -->
+    <section class="member_counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <div class="single_member_counter">
+                        <span class="counter">10</span>
+                        <h4>Mentores</h4>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="single_member_counter">
+                        <span class="counter">57</span>
+                        <h4>Alumnos Aprendiendo </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- member_counter counter end -->
+{% endblock %}
+
+
+    {% if mobile %}
+        <a href="https://api.whatsapp.com/send?phone=51935489552&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20taller." class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+    {% else %}
+        <a href="https://web.whatsapp.com/send?phone=51935489552&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20taller." class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+    {% endif %}
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <div class="single-footer-widget footer_1">
+                        <a href="/"> <img height="70px" src="/static/base/img/dojopy-logo.png" alt=""> </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-4">
+                    <div class="single-footer-widget footer_2">
+                        <h4>Unete a Dojopy</h4>
+                        <!-- <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
+                        </p> -->
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input id="email_2" type="text" class="form-control" placeholder='Ingresa tu Email'
+                                        onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Ingresa tu Email'">
+                                    <div class="input-group-append">
+                                        <button class="btn btn_1"  id="join_dojopy_" type="button"><i class="ti-angle-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="social_icon">
+                            <a href="#"> <i class="ti-facebook"></i> </a>
+                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                            <a href="#"> <i class="ti-instagram"></i> </a>
+                            <a href="#"> <i class="ti-skype"></i> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-md-4">
+                    <div class="single-footer-widget footer_2">
+                        <h4>Contactanos</h4>
+                        <div class="contact_info">
+                            <p><span> Phone: </span><a href="tel:+51935489552"> +51 935 489 552</a>
+                            <!-- <p><span> Phone :</span> +51 935 489 552</p> -->
+                            <p><span> Email : </span>lifehack.py@gmail.com </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright_part_text text-center">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Dojopy <br>
+ <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Thanks Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="/static/base/js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/static/base/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/static/base/js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="/static/base/js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="/static/base/js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="/static/base/js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="/static/base/js/owl.carousel.min.js"></script>
+    <script src="/static/base/js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="/static/base/js/slick.min.js"></script>
+    <script src="/static/base/js/jquery.counterup.min.js"></script>
+    <script src="/static/base/js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="/static/base/js/custom.js"></script>
+
+    <script src="https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js">
+    </script>
+    <script type="text/javascript">
+
+
+    function send_contact(email, username){
+             $.ajax({
+                   type: "POST",
+                   url : "/contact",
+                   enctype: 'multipart/form-data',
+                   data: {"username": username, "email": email},
+                   encode: true
+               })
+               .done(function(data){
+                   $("#join_dojopy").notify("Gracias! por unirte a Dojopy", "success");
+                   $("#join_dojopy_").notify("Gracias! por unirte a Dojopy", "success");
+
+               })
+               .fail(function(data){
+                   console.log('err');
+                    });
+    }
+
+            $('#join_dojopy').on('click', function(e) {
+                email = $("#email").val()
+                username = $("#username").val()
+                if (email == ""){
+                  alert('Ingresa tu email')
+                  return
+                }
+                send_contact(email, username);
+            });
+            $('#join_dojopy_').on('click', function(e) {
+                email = $("#email_2").val()
+                if (email == ""){
+                  alert('Ingresa tu email')
+                  return
+                }
+                send_contact(email, 'anonimo');
+            });
+
+    </script>
+
+</body>
+
+</html>

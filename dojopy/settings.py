@@ -126,7 +126,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-      os.path.join(BASE_DIR, 'templates', 'home'),
-      os.path.join(BASE_DIR, 'templates', 'blog'),
+      os.path.join(BASE_DIR, 'templates'),
  )
 USER_AGENTS_CACHE = 'default'

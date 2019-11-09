@@ -30,17 +30,14 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-    {% block preview_fb %}
-        <!--FACEBOOK-->
-        <meta property="og:image" content="/static/base/local/company_blank_logo.png">
-        <meta property="og:image:type" content="image/png">
-        <meta property="og:image:width" content="500">
-        <meta property="og:image:height" content="500">
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.dojopy.com"/>
-        <meta property="og:title" content="Dojopy"/>
-        <meta property="og:description" content="" />
-    {% endblock %}
+{% block preview_fb %}
+    <meta property="og:image" content="/static/base/img/image_mentor.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.dojopy.com"/>
+    <meta property="og:title" content="Dojopy Mentor"/>
+    <meta property="og:description" content="Aprende a programar con tu mentor." />
+{% endblock %}
 
 
     <style media="screen">
@@ -157,6 +154,30 @@
     <!-- learning part end-->
     {% endblock %}
 
+    {% block cont_mentores %}
+        <!-- member_counter counter start -->
+        <section class="member_counter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="single_member_counter">
+                            <span class="counter">10</span>
+                            <h4>Mentores</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="single_member_counter">
+                            <span class="counter">57</span>
+                            <h4>Alumnos Aprendiendo </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- member_counter counter end -->
+    {% endblock %}
+
+
 {% block stack_it %}
     <!-- learning part start-->
     <section class="learning_part" >
@@ -192,6 +213,9 @@
     <!-- learning part end-->
 {% endblock %}
 
+{% block talleres %}
+
+{% endblock %}
     <section class="learning_part" id="connect">
         <div class="container">
             <div class="row justify-content-center">
@@ -220,30 +244,6 @@
 
 
 
-
-
-{% block cont_mentores %}
-    <!-- member_counter counter start -->
-    <section class="member_counter">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="single_member_counter">
-                        <span class="counter">10</span>
-                        <h4>Mentores</h4>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="single_member_counter">
-                        <span class="counter">57</span>
-                        <h4>Alumnos Aprendiendo </h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- member_counter counter end -->
-{% endblock %}
 
 
     {% if mobile %}

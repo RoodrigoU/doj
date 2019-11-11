@@ -14,5 +14,6 @@ def home(request):
 def contact(request):
     name = request.POST.get('username', '')
     email = request.POST.get('email', '')
-    ModelContact.objects.get_or_create(name=name, email=email)
+    phone = request.POST.get('phone', '')
+    ModelContact.objects.get_or_create(name=name, email=email, phone=phone)
     return JsonResponse({'status': 'ok'})

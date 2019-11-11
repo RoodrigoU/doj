@@ -113,10 +113,10 @@
                     <div class="banner_text">
                         <div class="banner_text_iner">
                             <h1>Dojopy Startup</h1>
-                            <h2>Aprende a programar creando una Startup con tu mentor.</h2>
+                            <h2>Aprende a Programar Creando una Startup con tu Mentor.</h2>
                             <b>
-                                <p><i> Now is better than never</i> </p>
-                                <p><i> - Zen Python</i> </p>
+                                <p style="font-size:1.1rem; color:#0c2e60"><i> Now is better than never</i> </p>
+                                <p style="font-size:1.1rem; color:#0c2e60"><i> - Zen Python</i> </p>
                             </b>
                             <a href="#connect" class="btn_1">Unete a Dojopy</a>
                         </div>
@@ -213,8 +213,6 @@
                              productivo para tu proyecto, prototipando rápidamente tus ideas.<br>
                             Es por ello que es el lenguaje y stack favorito en
                             <span style="color:green">Dojo</span><span style="color:black">py</span> (<span style="color:green">Dojo</span>   + <span style="color:black">Python</span>) ❤️
-
-
                         </p>
                         <!-- <a href="#" class="btn_1">Read More</a> -->
                     </div>
@@ -246,18 +244,17 @@
                 <div class="col-sm-5 col-lg-5">
                     <a href="/mentor/python-de-cero-a-ninja">
                         <div style="text-align:-webkit-center">
-                            <h3 style="font-size:1.8rem;padding:10px; color:#31de79">Programador Full Stack <br> de cero a ninja </h3>
+                            <h3 style="font-size:1.8rem;padding:10px; color:#31de79">Taller Python Full Stack  <br> (6 meses) </h3>
                         </div>
                         <div class="single_special_cource" style=" border:1px solid #9ff669;">
 
                             <img src="/static/base/img/taller-python.png" height="max-width: 100%;height: auto;" class="special_img" alt="">
                             <div class="special_cource_text">
                                 <div class="row" style="justify-content:center" >
-                                    <h3 style="font-size:1.6rem">Taller de Python</h3>
+                                    <h3 style="font-size:1.6rem">Python Full Stack <br> <p style="text-align:center;font-size:1.3rem">(6 meses)</p> </h3>
                                     <div class="col-9">
-
                                     </div>
-                                    <h4 style="font-size:1.5rem" > S/ 200.00 mensual</h4>
+                                    <h4 style="font-size:1.5rem; color:green" > S/ 200.00 mensual</h4>
                                     <div class="col-11">
                                     </div>
                                     <h5 style="font-size:1.2rem" > (pagas mes a mes)</h5>
@@ -291,6 +288,8 @@
                     <input type="text" id="username" name="name" placeholder="Tu Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu Nombre'" required="" class="single-input" style=" border:1px solid #9ff669;" >
                     <br>
                     <input type="text" id="email" name="email" placeholder="Tu Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu Email'" required="" class="single-input" style=" border:1px solid #9ff669;">
+                    <br>
+                    <input type="text" id="phone" name="phone" placeholder="Tu Telefono Móvil" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu Telefono Móvil'" required="" class="single-input" style=" border:1px solid #9ff669;">
                     <br>
                 </div>
                 <div class="col-10">
@@ -407,12 +406,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Dojop
     <script type="text/javascript">
 
 
-    function send_contact(email, username){
+    function send_contact(email, username, phone){
              $.ajax({
                    type: "POST",
                    url : "/contact",
                    enctype: 'multipart/form-data',
-                   data: {"username": username, "email": email},
+                   data: {"username": username, "email": email, "phone": phone},
                    encode: true
                })
                .done(function(data){
@@ -428,16 +427,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Dojop
             $('#join_dojopy').on('click', function(e) {
                 email = $("#email").val()
                 username = $("#username").val()
-                if (email == ""){
-                  alert('Ingresa tu email')
+                phone =  $("#phone").val()
+                if (phone == ""){
+                  alert('Ingresa tu telefono móvil para contactarte')
                   return
                 }
-                send_contact(email, username);
+                send_contact(email, username, phone);
             });
             $('#join_dojopy_').on('click', function(e) {
-                email = $("#email_2").val()
+                email = $("#email").val()
                 if (email == ""){
-                  alert('Ingresa tu email')
+                  alert('Ingresa tu Email')
                   return
                 }
                 send_contact(email, 'anonimo');

@@ -51,7 +51,8 @@ def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_tit
                                     email=email,
                                     data_payment=obj,
                                     name=name,
-                                    lastname=lastname
+                                    lastname=lastname,
+                                    phone=phone
                                 )
 
     if status_object == 'charge' and (type_ == 'venta_exitosa' or code == 'AUT0000'):

@@ -45,7 +45,7 @@
 
                                 </div>
                                 <div class="col-md-8 order-md-1">
-                                    <h4 style="font-size:2rem" class="mb-3">Checkout</h4>
+                                    <h4 style="font-size:1.8rem" class="mb-3">Tus Datos</h4>
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="firstName">Nombre</label>
@@ -130,7 +130,7 @@ function send_tk(token){
         var lastName = $("#lastName").val()
         var phone = $("#phone").val()
 
-        console.log(firstName, lastName, Culqi.token.email);
+        // console.log(firstName, lastName, Culqi.token.email);
          $.ajax({
                type: "POST",
                url : '/checkout',

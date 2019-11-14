@@ -106,7 +106,7 @@ def checkout(request):
                 token_payment_gateway,
                 tk_django,
                 email,
-                180*100, # verificar! enviar en centimos
+                170*100, # verificar! enviar en centimos
                 'Taller Python de Cero a Ninja',
                 firstName,
                 lastName,

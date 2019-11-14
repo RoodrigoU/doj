@@ -1,6 +1,7 @@
 /**************** extend css start ****************/
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
 
+
 /* line 2, E:/172 Etrain Education/172_Etrain_Education_html/sass/_extends.scss */
 .btn_1, .btn_2:hover, .main_menu .navbar-toggler:after, .banner_part .banner_text .btn_1, .feature_part .single_feature:hover span {
   background-image: linear-gradient(to left, #9ff669 0%, #31de79 51%, #9ff669 100%);
@@ -23,6 +24,9 @@ body {
   font-size: 15px;
 }
 
+b {
+    color: #fff !important;
+}
 /* line 9, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
 .message_submit_form:focus {
   outline: none;
@@ -4177,12 +4181,8 @@ ul {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  margin-top: 40px;
   position: relative;
-  padding-bottom: 10px;
   margin-bottom: 13px;
-  border-top: 1px solid #edeff2;
-  padding-top: 30px;
 }
 
 /* line 20, E:/172 Etrain Education/172_Etrain_Education_html/sass/_cource_details.scss */
@@ -4206,7 +4206,9 @@ ul {
 
 /* line 40, E:/172 Etrain Education/172_Etrain_Education_html/sass/_cource_details.scss */
 .desc p {
-  font-size: 12px !important;
+  font-size: 1.2rem !important;
+  color: #0c2e60;
+
 }
 
 /* line 47, E:/172 Etrain Education/172_Etrain_Education_html/sass/_cource_details.scss */
@@ -5551,6 +5553,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding-left: 30px;
   line-height: 1.82em !important;
+  margin:10px;
 }
 
 /* line 459, E:/172 Etrain Education/172_Etrain_Education_html/sass/_elements.scss */
@@ -5559,7 +5562,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 14px;
   height: 14px;
-  border: 3px solid #ff663b;
+  border: 3px solid #31de79;
   background: #fff;
   top: 4px;
   left: 0;
@@ -6885,7 +6888,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   background-color: #000;
   content: "";
-  opacity: 0.8;
+  opacity: 0.55;
   z-index: -1;
 }
 
@@ -6908,7 +6911,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 50px;
   font-weight: 600;
   margin-bottom: 10px;
-  text-transform: capitalize;
 }
 
 @media (max-width: 576px) {

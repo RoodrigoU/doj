@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block title %}
 <title>Dojopy - Taller Python</title>
@@ -7,7 +6,7 @@
 
 {% block preview_fb %}
     <!--FACEBOOK-->
-    <meta property="og:image" content="/static/base/img/image_mentor.png">
+    <meta property="og:image" content="/static/base/img/back_priview.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.dojopy.com"/>
@@ -26,8 +25,8 @@
                 <div class="breadcrumb_iner text-center">
                     <div class="breadcrumb_iner_item">
                         <h2>Python de Cero a Ninja</h2>
-                        <p><i> Now is better than never</i> </p>
-                        <p><i> Zen Python</i> </p>
+                        <p style="font-size:1.3rem; color:white"><i> Now is better than never</i> </p>
+                        <p style="font-size:1.3rem; color:white"><i> - Zen Python</i> </p>
                     </div>
                 </div>
             </div>
@@ -37,203 +36,306 @@
 <!-- breadcrumb start-->
 
 
-
 <section class="course_details_area section_padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 course_details_left">
+            <div class="col-lg-7 course_details_left">
                 <!-- <div class="main_image">
                     <img class="img-fluid" src="/static/base/img/single_cource.png" alt="">
                 </div> -->
                 <div class="content_wrapper">
                     <div class="blog_details">
                         <div class="content">
-                            <h3>¿POR QUÉ APRENDER PYTHON?</h3>
-                            <p style="font-size:1.3rem">
+                            <h3 class="title">¿POR QUÉ APRENDER PYTHON?</h3>
+                            <p style="font-size:1.2rem">
 Python es uno de los lenguajes de programación más valorados y usados a nivel mundial
  según estadísticas de <a target="_blank" href="https://insights.stackoverflow.com/survey/2019">Stack Overflow</a>
   la plataforma más grande de programadores,
  multitud de Startups y empresas lo utilizan en su día a día como Instagram, Spotify,
-  Amazon, Netflix, Google, Facebook, Dropbox, Youtube, etc
+  Amazon, Netflix, Google, Facebook, Dropbox, Youtube, etc <br>
+  Python es Simple, claro y con un código legible para todos.
 
                             </p>
-                            <br>
+                            <br/>
                         </div>
                     </div>
                 </div>
-                <br><br>
+                <br/><br/>
                 <div class="content_wrapper">
                     <div class="blog_details">
                         <div class="content">
-                            <h3>¿DONDE APLICAR PYTHON?</h3>
-                            <p style="font-size:1.3rem">
-                                -Desarrollo de software multiplaforma(Windows/Linux/OSX)
-                                -Servicios y páginas web
-                                -Data science y big data
-                                -Machine learning & deep learning
-                                -Bots, automatización, scripting, seguridad informática
-                                -Diseño de Interfaces Gráficas (PyQT5, PySide2, Tkinter, Wxwidgets, Kivy, OpenGL)
-                                -Desarrollo de  videojuegos (Panda3D, PyGame, Cocos 2D )
-                                -Visión Artificial (OpenCV, Scikits Learn, PIL)
-                                -Domótica,  Robótica, Internet de las cosas, Hardware
+                            <h3 class="title">¿QUÉ PUEDO DESARROLLAR CON PYTHON?</h3>
+                            <p>
+                                <ul class="unordered-list" style="font-size:1.2rem">
+                                    <li style="margin:5px">Desarrollo de software multiplataforma <br/> (Windows/Linux/MAC OSX)</li>
+                                    <li style="margin:5px">Desarrollo de servicios y plataformas web <br/> (Django y Flask)</li>
+                                    <li style="margin:5px">Inteligencia Artifical <br/>(Machine Learning & Deep Learning) con Keras y Tensorflow.</li>
+                                    <li style="margin:5px">Data Science y Big Data.</li>
+                                    <li style="margin:5px">Bots, automatización, scripting, seguridad informática.</li>
+                                    <li style="margin:5px">Desarrollo de Skills con Alexa Asistente.</li>
+                                    <li style="margin:5px">Diseño de Interfaces Gráficas <br/> (PyQT5, PySide2, Tkinter, Wxwidgets, Kivy, OpenGL)</li>
+                                    <li style="margin:5px">Desarrollo de  videojuegos <br/>(Panda3D, PyGame, Cocos 2D )</li>
+                                    <li style="margin:5px">Visión Artificial, reconocimiento facial y objetos  <br/> (OpenCV, Scikits Learn, PIL)</li>
+                                    <li style="margin:5px">Domótica,  Robótica, Internet de las cosas, Hardware y mucho más!</li>
+                                </ul>
                             </p>
-                            <br>
+                            <br/>
                         </div>
                     </div>
                 </div>
-                <br><br>
+                <br/>
+
+                <div class="content_wrapper">
+                    <div class="blog_details">
+                        <div class="content">
+                            <h3 class="title">¿REQUISITOS ANTES DE INICIAR?</h3>
+                            <p>
+                                <ul class="unordered-list" style="font-size:1.2rem">
+                                    <li style="margin:5px">Computadora Personal </li>
+                                    <li style="margin:5px">Internet Estable</li>
+                                    <li style="margin:5px">Actitud de Aprendizaje</li>
+                                </ul>
+                            </p>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
+                <div class="col-lg-5 right-contents">
 
+                    <div class="row" style="justify-content:center;">
+                        <div class="col-sm-12 col-lg-12">
+                                <div class="single_special_cource" style=" border:1px solid #9ff669;">
 
+                                    <img src="/static/base/img/taller-python.png" height="max-width: 100%;height: auto;" class="special_img" alt="">
+                                    <div class="special_cource_text">
+                                        <div class="row" style="justify-content:center">
+                                            <div class="col-10 rating" style="text-align:-webkit-center">
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                            </div>
 
-                        <div class="col-lg-4 right-contents">
-                            <div class="sidebar_top">
-                                <ul>
-                                    <li>
-                                        <p style="font-size:1.3rem">
-                                            Taller dinámico con tu mentor con aprendizaje
-                                            personalizado e individual
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p style="font-size:1.3rem">Aprende desarrollando proyectos</p>
-                                    </li>
-                                    <li>
-                                        <p style="font-size:1.3rem">3 meses de mentoria online en vivo (27 horas)</p>
-                                    </li>
+                                            <h3 class="title" style="font-size:1.6rem; padding:7px">Python de Cero a Ninja<br> <p style="text-align:center;font-size:1.3rem;color:#0c2e60">(3 meses)</p> </h3>
 
-                                    <li>
-                                        <p style="font-size:1.3rem">
-                                            Aprende en cualquier momento y lugar del mundo,
-                    recibe mentorías en vivo por videollamada (Skype o Hangouts),
-                     forma parte de nuevas experiencias de aprendizaje.
-                                        </p>
-                                    </li>
+                                            <h4 style="font-size:1.6rem; color:#31de79" > S/ 180.00 mensual</h4>
+                                            <div class="col-11">
+                                            </div>
+                                                <h5 style="font-size:1.2rem" > (pagas mes a mes)</h5>
 
-                                    <li>
-                                        <p style="font-size:1.3rem">Certificado digital de finalización</p>
-                                    </li>
+                                        </div>
 
+                                    </div>
+                                </div>
+                                <br>
+                                <a href="{{uri_whatsapp}}" class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
+                                    <b>
+                                        Reservar Prueba Gratuita
+                                    </b>
+                                </a>
+                                <a href="/checkout" class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
+                                    <b>
+                                        Comprar Taller
+                                    </b>
+                                </a>
+                                <!-- <a href="#" class="btn_1 d-block" style="margin:10px">Comprar Ahora</a> -->
+                        </div>
+                    </div>
+
+                    <br><br>
+                    <div class="blog_details">
+                        <h3  class="title"  style="font-size:1.5rem; padding:7px; text-align:center">
+                            ¿QUÉ INCLUYE ESTE TALLER?
+                         </h3>
+
+                        <ul class="unordered-list">
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">
+                                    Aprende de tu Mentor con dinámicas de
+                                    aprendizaje personalizado e individual, online en vivo.
+                                </p>
+                            </li>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Aprende desarrollando proyectos.</p>
+                            </li>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Acceso ilimitado a la plataforma de videos del 'Taller Python de Cero a Ninja' para complementar la mentoría.</p>
+                            </li>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">3 meses de mentoría online en vivo: </p>
+                                <ul class="unordered-list">
+                                    <li style="font-size:1.1rem;color:#888888"> sesiones de 1 hora </li>
+                                    <li style="font-size:1.1rem;color:#888888"> 3 sesiones/semana </li>
+                                    <li style="font-size:1.1rem;color:#888888"> 9 horas/mes </li>
+                                    <li style="font-size:1.1rem;color:#888888"> 27 horas en total invertidas.</li>
                                 </ul>
-                                <a href="#" class="btn_1 d-block">Reserva tu Prueba Gratuita</a>
-                            </div>
+                            </li>
 
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">
+                                    Aprende en cualquier momento y lugar del mundo, <br/>
+            recibe mentorías en vivo por videollamada (Skype o Hangouts), <br/>
+             forma parte de nuevas experiencias de aprendizaje.
+                                </p>
+                            </li>
 
-                            <h4 class="title">Comentarios</h4>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Certificado digital de finalización
+                                <a target="_blank" href="/static/base/files/certificado-oficial.pdf">Ver Certificado</a>
+                                </p>
+                            </li>
 
-                            <div class="content">
-                                <div class="comments-area mb-30">
-                                    <div class="comment-list">
-                                        <div class="single-comment single-reviews justify-content-between d-flex">
-                                            <div class="user justify-content-between d-flex">
-                                                <div class="thumb">
-                                                    <img src="/static/base/img/cource/cource_1.png" alt="">
-                                                </div>
-                                                <div class="desc">
-                                                    <h5><a href="#">Emilly Blunt</a>
-                                                    </h5>
-                                                    <div class="rating">
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                    </div>
-                                                    <p class="comment">
-                                                        Blessed made of meat doesn't lights doesn't was dominion and sea earth
-                                                        form
-                                                    </p>
-                                                </div>
-                                            </div>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Participa en el sorteo mensual del polo, Python 'Now is better than never'<br/>
+                                    <a target="_blank" href="/static/base/img/shirt-python.jpg">
+                                        <img height="250" src="/static/base/img/shirt-python.jpg" alt="">
+                                    </a>
+                                </p>
+
+                            </li>
+
+                        </ul>
+                        <a href="{{uri_whatsapp}}" class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
+                            <b>
+                                Reservar Prueba Gratuita
+                            </b>
+                        </a>                        <!-- <a href="#" class="btn_1 d-block">Comprar Ahora</a> -->
+                    </div>
+
+                    <br><br>
+                    <h4 class="title">¿Qué dicen nuestros alumnos?</h4>
+
+                    <div class="content">
+                        <div class="comments-area mb-30">
+
+                            <div class="comment-list">
+                                <div class="single-comment single-reviews justify-content-between d-flex">
+                                    <div class="user justify-content-between d-flex">
+                                        <div>
+                                            <img width="75" src="/static/base/img/user-image.png" alt="">
                                         </div>
-                                    </div>
-                                    <div class="comment-list">
-                                        <div class="single-comment single-reviews justify-content-between d-flex">
-                                            <div class="user justify-content-between d-flex">
-                                                <div class="thumb">
-                                                    <img src="/static/base/img/cource/cource_2.png" alt="">
-                                                </div>
-                                                <div class="desc">
-                                                    <h5><a href="#">Elsie Cunningham</a>
-                                                    </h5>
-                                                    <div class="rating">
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/star.svg" alt=""></a>
-                                                    </div>
-                                                    <p class="comment">
-                                                        Blessed made of meat doesn't lights doesn't was dominion and sea earth
-                                                        form
+                                        <div class="desc">
+                                                <b>
+                                                    <p  style="color:#888888">
+                                                        Pedro Oscco
                                                     </p>
-                                                </div>
+                                                </b>
+                                            <div class="rating">
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="comment-list">
-                                        <div class="single-comment single-reviews justify-content-between d-flex">
-                                            <div class="user justify-content-between d-flex">
-                                                <div class="thumb">
-                                                    <img src="/static/base/img/cource/cource_3.png" alt="">
-                                                </div>
-                                                <div class="desc">
-                                                    <h5><a href="#">Maria Luna</a>
-                                                    </h5>
-                                                    <div class="rating">
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                        <a href="#"><img src="/static/base/img/icon/star.svg" alt=""></a>
-                                                    </div>
-                                                    <p class="comment">
-                                                        Blessed made of meat doesn't lights doesn't was dominion and sea earth
-                                                        form
-                                                    </p>
-                                                </div>
-                                            </div>
+
+                                            <p class="comment">
+                                                Fueron unos meses de mucho aprendizaje, gracias!
+                                            </p>
+                                            <img width="40" src="/static/base/img/peru-flag.png" alt="Perú">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                            <div class="comment-list">
+                                <div class="single-comment single-reviews justify-content-between d-flex">
+                                    <div class="user justify-content-between d-flex">
+                                        <div>
+                                            <img width="75" src="/static/base/img/user-image.png" alt="México">
+                                        </div>
+                                        <div class="desc">
+                                            <b>
+                                                <p  style="color:#888888">
+                                                    Esteban Pacheco
+                                                </p>
+                                            </b>
+                                            <div class="rating">
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                            </div>
+                                            <p class="comment">
+                                                Excelentes cursos, y muy bien explicado.
+                                            </p>
+                                            <img width="40" src="/static/base/img/mexico-flag.png" alt="peru">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-            <div class="col-lg-8 course_details_left">
-                <div class="content_wrapper">
-                    <div class="blog_details">
-                        <h4>Estructura Python de Cero a Ninja</h4>
-                        <div class="content">
-                            <ul class="course_list">
-                                <li class="justify-content-between align-items-center d-flex">
-                                    <p>Introduction Lesson</p>
-                                </li>
-                                <li class="justify-content-between align-items-center d-flex">
-                                    <p>Responsive Design</p>
-                                </li>
-                                <li class="justify-content-between align-items-center d-flex">
-                                    <p>Canvas in HTML 5</p>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-
 
         </div>
+
+        <div class="content_wrapper">
+            <div class="blog_details">
+                <div class="content">
+                    <h3 class="title">¿QUÉ APRENDERAS?</h3>
+                <ul class="unordered-list" style="font-size:1.2rem; color:#888888">
+                    <li> Introducción al lenguaje de programación python</li>
+                    <li> Instalación de Python y mi primer programa "Hola Mundo"</li>
+                    <li>Preparando el entorno de desarrollo con Virtualenv</li>
+                    <li>Tipos de datos:
+                        <ul>
+                            <li>Booleanos</li>
+                            <li>Enteros</li>
+                            <li>Flotantes</li>
+                            <li>Listas</li>
+                            <li>Tuplas</li>
+                            <li>Diccionarios y Conjuntos SET</li>
+                        </ul>
+                    </li>
+
+                    <li>Operadores lógicos y Flujos de control
+                        <ul>
+                            <li>Operadores, Sentencias</li>
+                            <li>Condicionales(if else), multiples</li>
+                            <li>Bucles FOR Y WHILE</li>
+                        </ul>
+                    </li>
+
+                    <li>  Entradas y Salidas Estándar</li>
+                    <li> Lectura y Escritura de Ficheros</li>
+                    <li> Funciones, argumentos</li>
+                    <li> Manejo de Excepciones(try except)</li>
+                    <li> Módulos y paquetes</li>
+                    <li>Guardando y leyendo datos con JSON</li>
+                    <li>Algoritmos de búsqueda:
+                        <ul>
+                            <li>Búsqueda lineal</li>
+                            <li>Búsqueda binaria</li>
+                        </ul>
+                    </li>
+                    <li>Encriptando datos con Python</li>
+                    <li>Concurrencia en Python con Hilos(Threads) y Multi Procesos</li>
+                    <li>Sockets</li>
+                    <li>Enviando correos automaticamente por SMTP</li>
+                    <li>Base de datos con Python</li>
+                    <li>Programación orientada a objetos (POO), Clases y Objetos</li>
+                    <li>Expresiones regulares</li>
+                    <li>módulos de scraping</li>
+                    <li>Proyectos de  Web Scraping</li>
+                    <li>Tips y Buenas prácticas en desarrollo:
+                        <ul>
+                            <li>Funciones Anónimas, Generadores y Decoradores</li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 <!--================ End Course Details Area =================-->
-
-
-
-
 
 
 {% endblock %}

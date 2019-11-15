@@ -3,9 +3,12 @@ from .models import ModelContact, ModelPayment
 from django.http import JsonResponse
 import culqipy
 from uuid import uuid4
+import logzero
+from logzero import logger
 
-culqipy.public_key = 'pk_live_4Wj2lCKn5nLEIX4s'
-culqipy.secret_key = 'sk_live_RQI8nAhBzsF9sluD'
+logzero.logfile("/tmp/django.log", maxBytes=1e6, backupCount=3)
+culqipy.public_key = 'pk_test_QfmMu2RtRgv6TEtg'
+culqipy.secret_key = 'sk_test_P92zyYskVlMZ3KqD'
 
 
 def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_title, name, lastname, phone):
@@ -139,3 +142,12 @@ def checkoutSuccesss(request):
             request, 'checkout_success.html',
             {'uri_whatsapp': uri_whatsapp}
         )
+
+
+def webhook(request):
+    if request.method == "POST":
+        r_post = request.POST
+        r_body = request.body
+        logger.info(str(r_post))
+        logger.info(str(r_body))
+        return JsonResponse({'response': 'Webhook de Culqi recibido'})

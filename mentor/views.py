@@ -28,4 +28,4 @@ def taller_python(request):
         uri_reserva = "https://web.whatsapp.com/send?phone=51935489552&text=Hola%2C%20quisiera%20reservar%20la%20prueba%20gratuita%20del%20Taller%20Python."
         uri_whatsapp = "https://web.whatsapp.com/send?phone=51935489552&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20taller%20Python."
 
-    return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp})
+    return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp, 'uri_reserva': uri_reserva})

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django_user_agents',
     'startup',
     'blog',
+    'shop'
 ]
 
 MIDDLEWARE = [

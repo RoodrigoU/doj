@@ -6,8 +6,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 hostname = platform.uname()[1].lower().strip()
 
 HOST_ = 'localhost'
-if not('dojopy' in hostname):
-    HOST_ = 'db'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/

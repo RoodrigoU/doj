@@ -14,6 +14,19 @@ def mentor(request):
 
     return render(request, 'base_mentor.html', {'uri_whatsapp': uri_whatsapp})
 
+def demo(request):
+    mobile = False
+    try:
+        mobile = request.user_agent.is_mobile
+    except:
+        pass
+    if mobile:
+        uri_whatsapp = "https://api.whatsapp.com/send?phone=51935489552&text=Hola%21%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Taller%20Python."
+    else:
+        uri_whatsapp = "https://web.whatsapp.com/send?phone=51935489552&text=Hola%21%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Taller%20Python."
+
+    return render(request, 'demo.html', {'uri_whatsapp': uri_whatsapp})
+
 
 def taller_python(request):
     mobile = False

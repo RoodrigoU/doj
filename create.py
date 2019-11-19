@@ -10,7 +10,7 @@ payload = {
             "client_details": {
               "first_name":"erick",
               "last_name": "conde",
-              "email": "",
+              "email": "lifehack.py@gmail.com",
               "phone_number": "+51945145288"
             },
            "expiration_date": 1574208000

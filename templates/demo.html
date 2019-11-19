@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Dojopy - Mentor </title>
+{% endblock %}
+
+{% block my_script_head %}
+<script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+{% endblock %}
+
+
+{% block main_content %}
+
+<section id="talleres">
+    <br><br><br><br><br>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5" style="padding:1px">
+                <div class="section_tittle text-center">
+                    <h2>Dojopy Mentor Flujo</h2>
+                </div>
+            </div>
+        </div>
+
+            <div class="plyr__video-embed" id="player">
+                <iframe src="https://player.vimeo.com/video/374225952"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen allowtransparency></iframe>
+            </div>
+
+
+    </div>
+</section>
+<br><br>                                <br>
+
+
+{% endblock %}
+
+
+{% block cont_mentores %}
+{% endblock %}
+
+{% block contact %}
+{% endblock %}
+
+{% block talleres %}
+{% endblock %}
+
+{% block info_dojopy %}
+{% endblock %}
+
+{% block stack_it %}
+{% endblock %}
+
+
+
+{% block my_script %}
+<script type="text/javascript">
+      var options = {
+        "controls" : ['play-large', 'play', 'progress', 'current-time', 'airplay', 'fullscreen'],
+      };
+      const player = new Plyr('#player', options);
+      player.volume = 1;
+      player.poster = "/static/base/img/flujo-demo.png";
+      window.player = player;
+
+</script>
+{% endblock %}

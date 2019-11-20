@@ -8,8 +8,11 @@ TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
 
 CURRENCY_CONVERT = {
     'PE': {'mount': '159', 'simbol': 'S/ '},
-    'CO': {'mount': '162 300', 'simbol': '$ '},
-    'MX': {'mount': '914', 'simbol': '$ '},
+    'CO': {'mount': '163 000', 'simbol': '$ '},
+    'MX': {'mount': '917', 'simbol': '$ '},
+    'SV': {'mount': '412 000', 'simbol': '$ '},
+    'ES': {'mount': '45', 'simbol': '€'},
+    'FR': {'mount': '45', 'simbol': '€'},
 }
 
 def get_info_ip(ip):

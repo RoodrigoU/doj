@@ -72,9 +72,9 @@ def home(request):
     except Exception as e:
         pass
     if mobile:
-        uri_whatsapp = "https://api.whatsapp.com/send?phone=51935489552&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20taller."
+        uri_whatsapp = 'api'
     else:
-        uri_whatsapp = "https://web.whatsapp.com/send?phone=51935489552&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20taller."
+        uri_whatsapp = 'web'
     return render(request, 'base.html', {'uri_whatsapp': uri_whatsapp})
 
 
@@ -100,9 +100,9 @@ def checkout(request):
     except:
         pass
     if mobile:
-        uri_whatsapp = "https://api.whatsapp.com/send?phone=51935489552&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20taller."
+        uri_whatsapp = 'api'
     else:
-        uri_whatsapp = "https://web.whatsapp.com/send?phone=51935489552&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20taller."
+        uri_whatsapp = 'web'
 
     if request.method == "POST":
         checkout_validate = create_payment_checkout(
@@ -134,10 +134,9 @@ def checkoutSuccesss(request):
     except Exception as e:
         pass
     if mobile:
-        uri_whatsapp = "https://api.whatsapp.com/send?phone=51935489552&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20taller."
+        uri_whatsapp = 'api'
     else:
-        uri_whatsapp = "https://web.whatsapp.com/send?phone=51935489552&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20taller."
-
+        uri_whatsapp = 'web'
     return render(
             request, 'checkout_success.html',
             {'uri_whatsapp': uri_whatsapp}

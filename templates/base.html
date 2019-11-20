@@ -30,6 +30,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
     {% block my_script_head %}
     {% endblock %}
 
@@ -54,10 +56,25 @@
         color:#FFF;
         border-radius:50px;
         text-align:center;
-        font-size:30px;
+        font-size:28px;
         box-shadow: 2px 2px 3px #999;
         z-index:100;
         }
+
+        .float2{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right: 1px;
+    margin-right: 110px;
+    background-color:#fff;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+    }
 
         .my-float{
         margin-top:16px;
@@ -351,11 +368,11 @@
                 <div>
                     <br>
                     <a target="_blank" href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola%21%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Taller%20Python.">
-                        <i style="padding:5px;margin:20px;font-size:4rem; color:green" class="fa fa-whatsapp" aria-hidden="true"></i>
+                        <i style="padding:5px;margin:20px;font-size:4rem; color:green" class="fab fa-whatsapp" aria-hidden="true"></i>
                     </a>
 
                     <a target="_blank" href="https://m.me/dojopy">
-                        <i style="padding:5px;margin:20px;font-size:4rem" class="fa fa-facebook" aria-hidden="true"></i>
+                        <i style="padding:5px;margin:20px;font-size:4rem" class="fab fa-facebook-messenger" aria-hidden="true"></i>
                     </a>
 
                     <div id="fb-root"></div>
@@ -368,7 +385,12 @@
 
 
         <a href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola%21%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Taller%20Python." class="float" target="_blank">
-            <i class="fa fa-whatsapp my-float"></i>
+            <i class="fab fa-whatsapp my-float"></i>
+        </a>
+
+
+        <a href="https://m.me/dojopy" class="float2" target="_blank">
+        <i class='fab fa-facebook-messenger' style='font-size:52px;color:#2271b3; margin-top:5px'></i>
         </a>
 
     <!-- footer part start-->
@@ -381,6 +403,7 @@
                         <h4>Contáctanos</h4>
                         <div class="contact_info">
                             <p><span> Phone: </span><a href="tel:+51935489552"> +51 935 489 552</a>
+                                <p><span> Phone: </span><a href="tel:+51935489552"> +51 01 6879 722</a>
                             <!-- <p><span> Phone :</span> +51 935 489 552</p> -->
                             <p><span> Email : </span>lifehack.py@gmail.com </p>
                         </div>

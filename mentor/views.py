@@ -85,6 +85,7 @@ def taller_python(request):
     if country_code:
         print('cacheado')
         country_flag = id_.country_flag
+        country_flag = country_flag.replace('http://', 'https://')
         mount, simbol = get_currency(country_code)
     else:
         print('nuevo')
@@ -92,6 +93,8 @@ def taller_python(request):
         country_code = info_ip['country_code']
         country_name = info_ip['country_name']
         country_flag = info_ip['location']['country_flag']
+        if country_flag:
+            country_flag = country_flag.replace('http://', 'https://')
         calling_code = info_ip['location']['calling_code']
         id_.country_code = country_code
         id_.country_name = country_name

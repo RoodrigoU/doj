@@ -11,7 +11,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.dojopy.com"/>
     <meta property="og:title" content="Dojopy Mentor"/>
-    <meta property="og:description" content="Aprende a Programar con tu Mentor de Cero a Ninja." />
+    <meta property="og:description" content="Aprende a Programar Creando una Startup con tu Mentor." />
 {% endblock %}
 
 
@@ -47,7 +47,7 @@
                     <div class="blog_details">
                         <div class="content">
                             <h3 class="title">¿POR QUÉ APRENDER PYTHON?</h3>
-                            <p style="font-size:1.2rem">
+                            <p style="font-size:1.1rem">
 Python es uno de los lenguajes de programación más valorados y usados a nivel mundial
  según estadísticas de <a target="_blank" href="https://insights.stackoverflow.com/survey/2019">Stack Overflow</a>
   la plataforma más grande de programadores,
@@ -66,7 +66,7 @@ Python es uno de los lenguajes de programación más valorados y usados a nivel 
                         <div class="content">
                             <h3 class="title">¿QUÉ PUEDO DESARROLLAR CON PYTHON?</h3>
                             <p>
-                                <ul class="unordered-list" style="font-size:1.2rem">
+                                <ul class="unordered-list" style="font-size:1.1rem">
                                     <li style="margin:5px">Desarrollo de software multiplataforma <br/> (Windows/Linux/MAC)</li>
                                     <li style="margin:5px">Desarrollo de servicios y plataformas web <br/> (Django y Flask)</li>
                                     <li style="margin:5px">Inteligencia Artifical <br/>(Machine Learning & Deep Learning)</li>
@@ -90,10 +90,9 @@ Python es uno de los lenguajes de programación más valorados y usados a nivel 
                         <div class="content">
                             <h3 class="title">¿REQUISITOS ANTES DE INICIAR?</h3>
                             <p>
-                                <ul class="unordered-list" style="font-size:1.2rem">
+                                <ul class="unordered-list" style="font-size:1.1rem">
                                     <li style="margin:5px">Computadora Personal </li>
                                     <li style="margin:5px">Internet Estable</li>
-                                    <li style="margin:5px">Actitud de Aprendizaje</li>
                                 </ul>
                             </p>
                             <br/>
@@ -106,7 +105,7 @@ Python es uno de los lenguajes de programación más valorados y usados a nivel 
                     <div class="blog_details">
                         <div class="content">
                             <h3 class="title">¿QUÉ APRENDERAS?</h3>
-                        <ul class="unordered-list" style="font-size:1.2rem; color:#888888">
+                        <ul class="unordered-list" style="font-size:1.1rem; color:#888888">
                             <li> Introducción al lenguaje de programación python</li>
                             <li> Instalación de Python y mi primer programa "Hola Mundo"</li>
                             <li>Preparando el entorno de desarrollo con Virtualenv</li>
@@ -165,43 +164,7 @@ Python es uno de los lenguajes de programación más valorados y usados a nivel 
 
                 <div class="col-lg-5 right-contents">
 
-                    <div class="row" style="justify-content:center;">
-                        <div class="col-sm-12 col-lg-12">
-                                <div class="single_special_cource" style=" border:1px solid #9ff669;">
-
-                                    <img src="/static/base/img/taller-python.png" height="max-width: 100%;height: auto;" class="special_img" alt="">
-                                    <div class="special_cource_text">
-                                        <div class="row" style="justify-content:center">
-                                            <div class="col-10 rating" style="text-align:-webkit-center">
-                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                                <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
-                                            </div>
-
-                                            <h3 class="title" style="font-size:1.6rem; padding:7px">Python de Cero a Ninja<br> <p style="text-align:center;font-size:1.2rem;color:#0c2e60">(10 HORAS DE MENTORÍA)</p> </h3>
-                                            <div class="col-11">
-                                            </div>
-                                            <h4 style="font-size:1.6rem; color:#31de79;font-weight:600; padding:5px" >2 PAGOS DE {{simbol}} {{mount}}</h4>
-                                            <div class="col-11" style="text-align: center; padding-bottom:10px">
-                                                <img width="37px" src="{{country_flag}}" alt="">
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <br>
-                                <a href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola%2C%20quisiera%20reservar%20la%20prueba%20gratuita%20del%20Taller%20Python." class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
-                                    <b>
-                                        Reservar Prueba Gratuita
-                                    </b>
-                                </a>
-                                <!-- <a href="#" class="btn_1 d-block" style="margin:10px">Comprar Ahora</a> -->
-                        </div>
-                    </div>
+                    {% include "item_product.html" %}
 
                     <br><br>
                     <div class="blog_details">
@@ -213,40 +176,35 @@ Python es uno de los lenguajes de programación más valorados y usados a nivel 
                             <li>
                                 <p style="font-size:1.1rem; margin:5px">
                                     Aprende de tu Mentor con dinámicas de
-                                    aprendizaje personalizado e individual, online en vivo.
+                                    aprendizaje personalizado e individual (live coding).
                                 </p>
                             </li>
                             <li>
                                 <p style="font-size:1.1rem; margin:5px">Aprende creando proyectos reales.</p>
                             </li>
                             <li>
-                                <p style="font-size:1.1rem; margin:5px">Acceso ilimitado la plataforma de proyectos, codigo y videos exclusivo de Dojopy para complementar la mentoría.</p>
+                                <p style="font-size:1.1rem; margin:5px">Acceso ilimitado la plataforma de proyectos, código y videos exclusivo de Dojopy para complementar la mentoría.</p>
                             </li>
                             <li>
-                                <p style="font-size:1.1rem; margin:5px">10 horas de mentoría </p>
+                                <p style="font-size:1.1rem; margin:5px">14 horas de mentoría </p>
                                 <ul class="unordered-list">
                                     <li style="font-size:1.1rem;color:#888888"> Sesiones de 2 horas con el Mentor </li>
                                     <li style="font-size:1.1rem;color:#888888"> 1 sesión/semana </li>
-                                    <li style="font-size:1.1rem;color:#888888"> 5 sesiones en total</li>
+                                    <li style="font-size:1.1rem;color:#888888"> 7 sesiones en total</li>
                                 </ul>
                             </li>
 
                             <li>
-                                <p style="font-size:1.1rem; margin:5px">Certificado digital de finalización
+                                <p style="font-size:1.1rem; margin:5px">Certificado digital al culminar taller <br>
                                 <a target="_blank" href="/static/base/files/certificado-oficial.pdf">Ver Certificado</a>
+                                <a target="_blank" href="/static/base/files/certificado-oficial.pdf">
+                                    <img height="250" src="/static/base/img/certi.png" alt="">
+                                </a>
                                 </p>
-                            </li>
-
-                            <li>
-                                <p style="font-size:1.1rem; margin:5px">Participa en el sorteo del polo, Python 'Now is better than never'<br/>
-                                    <a target="_blank" href="/static/base/img/shirt-python.jpg">
-                                        <img height="250" src="/static/base/img/shirt-python.jpg" alt="">
-                                    </a>
-                                </p>
-
                             </li>
 
                         </ul>
+                        <br>
                         <a href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola%2C%20quisiera%20reservar%20la%20prueba%20gratuita%20del%20Taller%20Python." class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
                             <b>
                                 Reservar Prueba Gratuita

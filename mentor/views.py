@@ -8,11 +8,15 @@ TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
 
 CURRENCY_CONVERT = {
     'PE': {'mount': '159', 'simbol': 'S/ '},
-    'CO': {'mount': '163 000', 'simbol': '$ '},
+    'CO': {'mount': '163,000', 'simbol': '$ '},
+    'EC': {'mount': '1,200,000', 'simbol': '$ '},
     'MX': {'mount': '917', 'simbol': '$ '},
-    'SV': {'mount': '412 000', 'simbol': '$ '},
+    'SV': {'mount': '412,000', 'simbol': '$ '},
     'ES': {'mount': '45', 'simbol': '€'},
-    'FR': {'mount': '45', 'simbol': '€'},
+    'AR': {'mount': '2,850', 'simbol': '$'},
+    'CL': {'mount': '37,500', 'simbol': '$'},
+    'BO': {'mount': '327', 'simbol': '$'},
+    'VE': {'mount': '470', 'simbol': '$'},
 }
 
 def get_info_ip(ip):
@@ -85,13 +89,12 @@ def taller_python(request):
             ip=client_ip,
     )
     country_code = id_.country_code
+    country_code = False
     if country_code:
-        print('cacheado')
         country_flag = id_.country_flag
         country_flag = country_flag.replace('http://', 'https://')
         mount, simbol = get_currency(country_code)
     else:
-        print('nuevo')
         info_ip = get_info_ip(client_ip)
         country_code = info_ip['country_code']
         country_name = info_ip['country_name']
@@ -101,12 +104,9 @@ def taller_python(request):
         calling_code = info_ip['location']['calling_code']
         id_.country_code = country_code
         id_.country_name = country_name
-        id_.country_flag = country_flag
         id_.calling_code = calling_code
         id_.save()
         mount, simbol = get_currency(country_code)
-
-    print(simbol, mount)
 
     try:
         mobile = request.user_agent.is_mobile
@@ -118,11 +118,11 @@ def taller_python(request):
          'uri_whatsapp': uri_whatsapp,
            'mount': mount,
             'simbol': simbol,
-            'country_flag': country_flag})
+            'country_flag': country_code.lower()})
     else:
         uri_whatsapp = "web"
         return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
          'uri_whatsapp': uri_whatsapp,
            'mount': mount,
             'simbol': simbol,
-            'country_flag': country_flag})
+            'country_flag': country_code.lower()})

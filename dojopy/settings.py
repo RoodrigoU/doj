@@ -14,7 +14,10 @@ HOST_ = 'localhost'
 SECRET_KEY = '(!r^z5en6442+ejy$jzz1$#81^jfmdw-v(q#=332@9n%@z4jfv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if 'dojopy' == platform.uname()[1].lower().strip():
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 

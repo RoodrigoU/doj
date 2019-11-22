@@ -167,7 +167,6 @@ p {
   line-height: 1.929;
   font-size: 14px;
   margin-bottom: 0px;
-  color: #888888;
 }
 
 /* line 85, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
@@ -1450,7 +1449,7 @@ ul {
 .blog_right_sidebar .post_category_widget .cat-list li a {
   font-size: 14px;
   line-height: 20px;
-  color: #888888;
+  color: #666666;
 }
 
 /* line 762, E:/172 Etrain Education/172_Etrain_Education_html/sass/_blog.scss */
@@ -1509,7 +1508,7 @@ ul {
   margin-bottom: 8px;
   margin-right: 3px;
   transition: all 0.3s ease 0s;
-  color: #888888;
+  color: #666666;
   font-size: 13px;
 }
 
@@ -1579,7 +1578,7 @@ ul {
 .blog-pagination .page-item.active .page-link {
   background-color: #fbf9ff;
   border-color: #f0e9ff;
-  color: #888888;
+  color: #666666;
 }
 
 /* line 1017, E:/172 Etrain Education/172_Etrain_Education_html/sass/_blog.scss */
@@ -1629,7 +1628,7 @@ ul {
   background: rgba(130, 139, 178, 0.1);
   padding: 15px;
   line-height: 1.733;
-  color: #888888;
+  color: #666666;
   font-style: italic;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -1965,7 +1964,7 @@ ul {
 /* line 1384, E:/172 Etrain Education/172_Etrain_Education_html/sass/_blog.scss */
 .comments-area .btn-reply {
   background-color: transparent;
-  color: #888888;
+  color: #666666;
   padding: 5px 18px;
   font-size: 14px;
   display: block;
@@ -3496,7 +3495,7 @@ ul {
   font-size: 14px;
   padding-left: 33px;
   padding-top: 12px;
-  color: #888888;
+  color: #666666;
 }
 
 @media (max-width: 576px) {
@@ -4183,6 +4182,7 @@ ul {
   cursor: pointer;
   position: relative;
   margin-bottom: 13px;
+  text-align:center;
 }
 
 /* line 20, E:/172 Etrain Education/172_Etrain_Education_html/sass/_cource_details.scss */
@@ -4213,7 +4213,7 @@ ul {
 
 /* line 47, E:/172 Etrain Education/172_Etrain_Education_html/sass/_cource_details.scss */
 .course_details_left .content {
-  color: #888888;
+  color: #666666;
   line-height: 1.929;
 }
 
@@ -4302,7 +4302,7 @@ ul {
 
 /* line 111, E:/172 Etrain Education/172_Etrain_Education_html/sass/_cource_details.scss */
 .right-contents .sidebar_top span {
-  color: #888888;
+  color: #666666;
 }
 
 /* line 114, E:/172 Etrain Education/172_Etrain_Education_html/sass/_cource_details.scss */
@@ -4350,7 +4350,7 @@ ul {
 .right-contents .reviews .star {
   width: 31%;
   margin-bottom: 10px;
-  color: #888888;
+  color: #666666;
   font-size: 15px;
 }
 
@@ -4697,7 +4697,7 @@ ul {
 .testimonial_part h5 {
   font-size: 14px;
   font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: #888888;
+  color: #666666;
 }
 
 /* line 2, E:/172 Etrain Education/172_Etrain_Education_html/sass/_footer.scss */

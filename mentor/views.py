@@ -8,7 +8,7 @@ TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
 
 
 CURRENCY_CONVERT = {
-    'PE': {'mount': '159', 'simbol': 'S/ '},
+    'PE': {'mount': '159', 'simbol': 'S/. '},
     'CO': {'mount': '163,000', 'simbol': '$ '},
     'EC': {'mount': '1,200,000', 'simbol': '$ '},
     'MX': {'mount': '917', 'simbol': '$ '},
@@ -122,7 +122,6 @@ def taller_python(request):
             ip=client_ip,
     )
     country_code = id_.country_code
-    country_code = False
     if country_code:
         country_flag = id_.country_flag
         country_flag = country_flag.replace('http://', 'https://')

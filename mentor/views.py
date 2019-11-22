@@ -16,7 +16,9 @@ CURRENCY_CONVERT = {
     'AR': {'mount': '2,850', 'simbol': '$'},
     'CL': {'mount': '37,500', 'simbol': '$'},
     'BO': {'mount': '327', 'simbol': '$'},
-    'VE': {'mount': '470', 'simbol': '$'},
+    'PY': {'mount': '303,270', 'simbol': '$'},
+    'UY': {'mount': '1,775', 'simbol': '$'},
+    'NI': {'mount': '1,595', 'simbol': '$'},
 }
 
 def get_info_ip(ip):

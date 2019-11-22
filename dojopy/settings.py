@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_user_agents',
     'startup',
+    'mentor',
     'blog',
     'shop'
 ]

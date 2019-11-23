@@ -112,6 +112,7 @@ def certificate(request, name_url):
                 'file_certificate': file_certificate
             })
 
+
 def taller_python(request):
     mobile = False
     mount, simbol, country_flag = '', '', ''

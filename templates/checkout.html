@@ -12,13 +12,57 @@
     <meta property="og:url" content="https://www.dojopy.com"/>
     <meta property="og:title" content="Dojopy Mentor"/>
     <meta property="og:description" content="Aprende a Programar con tu Mentor de Cero a Ninja." />
+    <style media="screen">
+        .modal {
+    position: fixed;
+    top: 25%;
+    right: 3%;
+    left: 3%;
+    width: auto;
+    margin: 0;
+}
+.modal-body {
+    height: 60%;
+}
+    </style>
 {% endblock %}
 
 {% block main_content %}
 
-<section class="learning_part" >
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">PAGO EFECTIVO</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="col-md-12 mb-6">
+              <label for="lastName">Email</label>
+              <input type="text" class="form-control" id="email_2" placeholder="correo electrónico" value="" required="">
+              <div class="invalid-feedback">
+                  correo electrónico
+              </div>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-primary">Generar Código de Pago</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="learning_part">
     <div class="container">
         <div class="row align-items-sm-center align-items-lg-stretch">
+
+
+            <!-- Button trigger modal -->
 
 
             <div class="container">
@@ -48,22 +92,22 @@
                                     <h4 style="font-size:1.8rem" class="mb-3">Tus Datos</h4>
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
-                                                <label for="firstName">Nombre</label>
-                                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                                                <label for="firstName">Nombre Completo</label>
+                                                <input type="text" class="form-control" id="firstName" placeholder="Nombre Completo" value="" required="">
                                                 <div class="invalid-feedback">
                                                     Nombre es requerido.
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
-                                                <label for="lastName">Apellido</label>
-                                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                                                <label for="lastName">Email</label>
+                                                <input type="text" class="form-control" id="lastName" placeholder="correo electrónico" value="" required="">
                                                 <div class="invalid-feedback">
-                                                    Apellido es requerido.
+                                                    correo electrónico
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="lastName">Teléfono Móvil o Whatsapp</label>
-                                                <input type="text" class="form-control" id="phone" placeholder="" value="" required="">
+                                                <input type="text" class="form-control" id="phone" placeholder="Teléfono Móvil o Whatsapp" value="" required="">
                                                 <div class="invalid-feedback">
                                                     Teléfono Móvil es requerido.
                                                 </div>
@@ -122,6 +166,9 @@
 {% endblock %}
 
 {% block info_dojopy %}
+{% endblock %}
+
+{% block contact %}
 {% endblock %}
 
 {% block stack_it %}
@@ -198,8 +245,11 @@ function culqi() {
 });
 
     $('#buyButton').on('click', function(e) {
-        Culqi.open();
-        e.preventDefault();
+
+        $('#exampleModal').modal('show')
+
+        // Culqi.open();
+        // e.preventDefault();
     });
 
 </script>

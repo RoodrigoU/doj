@@ -67,8 +67,6 @@ def mentor(request):
         uri_whatsapp = 'web'
     return render(request, 'base_mentor.html', {'uri_whatsapp': uri_whatsapp})
 
-def fname(arg):
-    pass
 
 def demo(request):
     mobile = False

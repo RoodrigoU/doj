@@ -80,7 +80,7 @@
                                     <ul class="list-group mb-3">
                                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                                             <div>
-                                                <h6 class="my-0">Taller Python de Cero a Ninja</h6>
+                                                <h6 class="my-0">Taller de Python</h6>
                                                 <small class="text-muted">Dojopy</small>
                                             </div>
                                             <span style="color:#31de79" class="text-muted">$ 49</span>
@@ -94,7 +94,7 @@
 
                                 </div>
                                 <div class="col-md-8 order-md-1">
-                                    <h4 style="font-size:1.8rem" class="mb-3">Tus Datos</h4>
+                                    <h4 style="font-size:1.5rem" class="mb-3">Tus Datos</h4>
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="firstName">Nombre Completo</label>
@@ -119,31 +119,29 @@
                                             </div>
                                         </div>
 
-
-                                        <hr class="mb-4">
-
-                                        <h4 class="mb-3">Selecciona tu Método de Pago</h4>
+                                        <br>
+                                        <h4 class="mb-3" style="font-size:1.5rem">Selecciona tu Método de Pago</h4>
 
                                         <div class="d-block my-3">
 
                                             <div class="custom-control custom-radio">
-                                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                                                <label style="cursor: pointer;" class="custom-control-label" for="credit"> TARJETA
-                                                    <img style="margin-left:16px"  width="220" src="/static/base/img/metodo-pago.png" alt="">
+                                                <input id="pago_tarjeta" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                                                <label style="cursor: pointer;" class="custom-control-label" for="pago_tarjeta"> TARJETA
+                                                    <img style="margin-left:16px"  width="210" src="/static/base/img/metodo-pago.png" alt="">
                                                 </label>
                                             </div>
                                             <hr>
                                             <div class="custom-control custom-radio">
                                                 <input id="pago_efectivo" name="paymentMethod" type="radio" class="custom-control-input" required="">
                                                 <label style="cursor: pointer;" class="custom-control-label" for="pago_efectivo"> PAGO EFECTIVO
-                                                    <img style="margin-left:-4px" width="170" src="/static/base/img/logo-pago-efectivo.jpg" alt="">
+                                                    <img style="margin-left:-4px" width="160" src="/static/base/img/logo-pago-efectivo.jpg" alt="">
                                                 </label>
                                             </div>
                                             <hr>
                                             <div class="custom-control custom-radio">
-                                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                                                <label style="cursor: pointer;" class="custom-control-label" for="paypal"> PAYPAL
-                                                    <img style="margin-left:60px" width="165" src="/static/base/img/metodo-paypal.png" alt="">
+                                                <input id="pago_paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                                                <label style="cursor: pointer;" class="custom-control-label" for="pago_paypal"> PAYPAL
+                                                    <img style="margin-left:60px" width="155" src="/static/base/img/metodo-paypal.png" alt="">
                                                 </label>
                                             </div>
                                         </div>
@@ -194,6 +192,7 @@ function send_tk(token){
                url : '/checkout',
                enctype: 'multipart/form-data',
                data: {
+                      "type_payment": "pago_tarjeta",
                       "token_payment_gateway": token,
                       "firstName": firstName,
                       "lastName": lastName,
@@ -229,10 +228,10 @@ function culqi() {
 
     Culqi.publicKey = 'pk_test_QfmMu2RtRgv6TEtg';
     Culqi.settings({
-        title: "Taller Python de Cero a Ninja",
-        currency: 'USD',
-        description: "Taller Python de Cero a Ninja",
-        amount: 49
+        title: "Taller de Python",
+        currency: 'PEN',
+        description: "Taller de Python",
+        amount: 169*100
     });
     Culqi.options({
     lang: 'auto',
@@ -268,15 +267,18 @@ $("#btn_pagoefectivo").click(function(){
 });
 
     $('#buyButton').on('click', function(e) {
-        $('#exampleModal').modal('show')
-        email_1 = $('#email_1').val()
-        document.getElementById("email_2").value = email_1;
-        // option_pagoefectivo = $('#pago-efectivo');
-        console.log(document.getElementById('pago_efectivo').checked);
+        if (document.getElementById('pago_tarjeta').checked) {
+            Culqi.open();
+            e.preventDefault();
+        }
+        else if (document.getElementById('pago_efectivo').checked) {
+            $('#exampleModal').modal('show')
+            email_1 = $('#email_1').val()
+            document.getElementById("email_2").value = email_1;
+        } else if (document.getElementById('pago_paypal').checked) {
+            console.log('pago pago_paypal');
+        }
 
-
-        // Culqi.open();
-        // e.preventDefault();
     });
 
 </script>

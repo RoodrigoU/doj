@@ -6,14 +6,13 @@ payload = {
             "amount": 53*100,
             "currency_code": "USD",
             "description": "Taller Python de Cero a Ninja",
-            "order_number": "pedido-99d9d9",
+            "order_number": "pedido-929d9d912",
             "client_details": {
               "first_name":"erick",
-              "last_name": "conde",
               "email": "lifehack.py@gmail.com",
-              "phone_number": "+51945145288"
+                  "phone_number": "+51991244662"
             },
-           "expiration_date": 1574208000
+           "expiration_date": 1574985600
        }
 
 headers = {

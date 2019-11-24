@@ -63,6 +63,29 @@ def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_tit
     else:
         return False
 
+def create_payment_pagoefectivo():
+    url = "https://api.culqi.com/v2/orders"
+    payload = {
+                "amount": 53*100,
+                "currency_code": "USD",
+                "description": "Taller de Python",
+                "order_number": "pedido-99d9d9",
+                "client_details": {
+                  "first_name":"erick",
+                  "last_name": "conde",
+                  "email": "lifehack.py@gmail.com",
+                  "phone_number": "+51945145288"
+                },
+               "expiration_date": 1574208000
+           }
+    headers = {
+        'Content-Type': "application/json",
+        'Authorization': "Bearer sk_test_P92zyYskVlMZ3KqD",
+        }
+    response = requests.post(url, json=payload, headers=headers)
+    print(response.text)
+
+
 
 # Create your views here.
 def home(request):
@@ -87,13 +110,6 @@ def contact(request):
 
 
 def checkout(request):
-    firstName = request.POST.get('firstName', '')
-    lastName = request.POST.get('lastName', '')
-    email = request.POST.get('email', '')
-    phone = request.POST.get('phone', '')
-    token_payment_gateway = request.POST.get('token_payment_gateway', '')
-    tk_django = request.POST.get('tk_django', '')
-    print(firstName, lastName, token_payment_gateway, tk_django)
     mobile = False
     try:
         mobile = request.user_agent.is_mobile
@@ -105,20 +121,31 @@ def checkout(request):
         uri_whatsapp = 'web'
 
     if request.method == "POST":
-        checkout_validate = create_payment_checkout(
-                token_payment_gateway,
-                tk_django,
-                email,
-                165*100, # verificar! enviar en centimos
-                'Taller Python de Cero a Ninja',
-                firstName,
-                lastName,
-                phone
-            )
-        if checkout_validate:
-            return JsonResponse({'token_active': True})
-        else:
-            return JsonResponse({'token_active': False})
+        if request.POST.get('type_payment', '') == 'pago_efectivo':
+            pass
+        elif request.POST.get('type_payment', '') == 'pago_tarjeta':
+            firstName = request.POST.get('firstName', '')
+            lastName = request.POST.get('lastName', '')
+            email = request.POST.get('email', '')
+            phone = request.POST.get('phone', '')
+            token_payment_gateway = request.POST.get('token_payment_gateway', '')
+            tk_django = request.POST.get('tk_django', '')
+            print(firstName, lastName, token_payment_gateway, tk_django)
+
+            checkout_validate = create_payment_checkout(
+                    token_payment_gateway,
+                    tk_django,
+                    email,
+                    169*100, # verificar! enviar en centimos
+                    'Taller Python',
+                    firstName,
+                    lastName,
+                    phone
+                )
+            if checkout_validate:
+                return JsonResponse({'token_active': True})
+            else:
+                return JsonResponse({'token_active': False})
     else:
         return render(
                 request, 'checkout.html',

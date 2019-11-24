@@ -46,12 +46,17 @@
               <div class="invalid-feedback">
                   correo electrónico
               </div>
+
+              <div id="data_pagoefectivo">
+                  <br><br>
+                  <!-- <h2>codigo cip: 19192182918</h2> -->
+              </div>
           </div>
 
       </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-        <button type="button" class="btn btn-primary">Generar Código de Pago</button>
+        <button id="btn_pagoefectivo" type="button" class="btn btn-primary">Generar Código de Pago</button>
       </div>
     </div>
   </div>
@@ -99,14 +104,14 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
-                                                <label for="lastName">Email</label>
-                                                <input type="text" class="form-control" id="lastName" placeholder="correo electrónico" value="" required="">
+                                                <label for="email_1">Email</label>
+                                                <input type="text" class="form-control" id="email_1" placeholder="correo electrónico" value="" required="">
                                                 <div class="invalid-feedback">
                                                     correo electrónico
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
-                                                <label for="lastName">Teléfono Móvil o Whatsapp</label>
+                                                <label for="phone">Teléfono Móvil o Whatsapp</label>
                                                 <input type="text" class="form-control" id="phone" placeholder="Teléfono Móvil o Whatsapp" value="" required="">
                                                 <div class="invalid-feedback">
                                                     Teléfono Móvil es requerido.
@@ -122,7 +127,7 @@
                                         <div class="d-block my-3">
 
                                             <div class="custom-control custom-radio">
-                                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                                                <input id="credit" name="credit" type="radio" class="custom-control-input" checked="" required="">
                                                 <label style="cursor: pointer;" class="custom-control-label" for="credit"> TARJETA
                                                     <img style="margin-left:16px"  width="220" src="/static/base/img/metodo-pago.png" alt="">
 
@@ -130,14 +135,14 @@
                                             </div>
                                             <hr>
                                             <div class="custom-control custom-radio">
-                                                <input id="pago-efectivo" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                                                <label style="cursor: pointer;" class="custom-control-label" for="pago-efectivo"> PAGO EFECTIVO
+                                                <input id="pago_efectivo" name="pago_efectivo" type="radio" class="custom-control-input" required="">
+                                                <label style="cursor: pointer;" class="custom-control-label" for="pago_efectivo"> PAGO EFECTIVO
                                                     <img style="margin-left:-4px" width="170" src="/static/base/img/logo-pago-efectivo.jpg" alt="">
                                                 </label>
                                             </div>
                                             <hr>
                                             <div class="custom-control custom-radio">
-                                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                                                <input id="paypal" name="paypal" type="radio" class="custom-control-input" required="">
                                                 <label style="cursor: pointer;" class="custom-control-label" for="paypal"> PAYPAL
                                                     <img style="margin-left:60px" width="165" src="/static/base/img/metodo-paypal.png" alt="">
                                                 </label>
@@ -244,9 +249,32 @@ function culqi() {
     }
 });
 
-    $('#buyButton').on('click', function(e) {
 
+$("#btn_pagoefectivo").click(function(){
+    email_2 = $('#email_2').val()
+    $.ajax({
+          type: "POST",
+          url : "/checkout",
+          enctype: 'multipart/form-data',
+          data: {"email_2": email_2, "type_payment": "pago_efectivo"},
+          encode: true
+      })
+      .done(function(data){
+        console.log('ok');
+        $('#data_pagoefectivo').html('<h1> payload api recibido</h1>');
+      })
+      .fail(function(data){
+         console.log('error');
+           });
+});
+
+    $('#buyButton').on('click', function(e) {
         $('#exampleModal').modal('show')
+        email_1 = $('#email_1').val()
+        document.getElementById("email_2").value = email_1;
+        // option_pagoefectivo = $('#pago-efectivo');
+        console.log(document.getElementById('pago_efectivo').checked);
+
 
         // Culqi.open();
         // e.preventDefault();

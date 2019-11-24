@@ -8,18 +8,18 @@ TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
 
 
 CURRENCY_CONVERT = {
-    'PE': {'mount': '159', 'simbol': 'S/. '},
-    'CO': {'mount': '163,000', 'simbol': '$ '},
-    'EC': {'mount': '1,200,000', 'simbol': '$ '},
-    'MX': {'mount': '917', 'simbol': '$ '},
-    'SV': {'mount': '412,000', 'simbol': '$ '},
+    'PE': {'mount': '170', 'simbol': 'S/. '},
+    'CO': {'mount': '171,000', 'simbol': '$ '},
+    'EC': {'mount': '1,269,000', 'simbol': '$ '},
+    'MX': {'mount': '970', 'simbol': '$ '},
+    'SV': {'mount': '436,000', 'simbol': '$ '},
     'ES': {'mount': '45', 'simbol': '€'},
-    'AR': {'mount': '2,850', 'simbol': '$'},
-    'CL': {'mount': '37,500', 'simbol': '$'},
-    'BO': {'mount': '327', 'simbol': '$'},
-    'PY': {'mount': '303,270', 'simbol': '$'},
-    'UY': {'mount': '1,775', 'simbol': '$'},
-    'NI': {'mount': '1,595', 'simbol': '$'},
+    'AR': {'mount': '2,990', 'simbol': '$'},
+    'CL': {'mount': '39,800', 'simbol': '$'},
+    'BO': {'mount': '344', 'simbol': '$'},
+    'PY': {'mount': '323,200', 'simbol': '$'},
+    'UY': {'mount': '1,880', 'simbol': '$'},
+    'NI': {'mount': '1,689', 'simbol': '$'},
 }
 
 def get_info_ip(ip):
@@ -41,7 +41,7 @@ def get_currency(country_code):
         mount = CURRENCY_CONVERT[country_code]['mount']
         simbol = CURRENCY_CONVERT[country_code]['simbol']
     else:
-        mount = '49'
+        mount = '51'
         simbol = '$'
     return mount, simbol
 

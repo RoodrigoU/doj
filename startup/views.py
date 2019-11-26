@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from .models import ModelContact, ModelPayment
+from .models import ModelContact, ModelPayment, ModelPagoEfectivo
 from django.http import JsonResponse
 import culqipy
 from uuid import uuid4
 import logzero
 from logzero import logger
+import datetime
+import requests
 
 logzero.logfile("/tmp/django.log", maxBytes=1e6, backupCount=3)
 culqipy.public_key = 'pk_test_QfmMu2RtRgv6TEtg'
@@ -63,28 +65,34 @@ def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_tit
     else:
         return False
 
-def create_payment_pagoefectivo():
-    url = "https://api.culqi.com/v2/orders"
-    payload = {
-                "amount": 53*100,
-                "currency_code": "USD",
-                "description": "Taller de Python",
-                "order_number": "pedido-99d9d9",
-                "client_details": {
-                  "first_name":"erick",
-                  "last_name": "conde",
-                  "email": "lifehack.py@gmail.com",
-                  "phone_number": "+51945145288"
-                },
-               "expiration_date": 1574208000
-           }
-    headers = {
-        'Content-Type': "application/json",
-        'Authorization': "Bearer sk_test_P92zyYskVlMZ3KqD",
-        }
-    response = requests.post(url, json=payload, headers=headers)
-    print(response.text)
-
+def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
+    try:
+        url = "https://api.culqi.com/v2/orders"
+        time_max = datetime.datetime.now() + datetime.timedelta(days=7)
+        expiration_date_timestamp = datetime.datetime.timestamp(time_max)
+        order_number = 'pedido-{}'.format(str(expiration_date_timestamp).split('.')[0])
+        payload = {
+                    "amount": mount*100,
+                    "currency_code": "PEN",
+                    "description": "Taller de Python",
+                    "order_number": order_number,
+                    "client_details": {
+                      "first_name": first_name,
+                      "last_name": last_name,
+                      "email": email,
+                      "phone_number": phone
+                    },
+                   "expiration_date": expiration_date_timestamp
+               }
+        headers = {
+            'Content-Type': "application/json",
+            'Authorization': "Bearer {}".format(culqipy.secret_key)
+            }
+        response = requests.post(url, json=payload, headers=headers, timeout=60)
+        return response.json()
+    except Exception as e:
+        print(e)
+        return False
 
 
 # Create your views here.
@@ -121,13 +129,61 @@ def checkout(request):
         uri_whatsapp = 'web'
 
     if request.method == "POST":
+        MOUNT_TALLER_PYTHON = 159
+        NameComplete = request.POST.get('NameComplete', '')
+        NameComplete = NameComplete.split(' ', 1)
+        if len(NameComplete) == 2:
+            firstName = NameComplete[0]
+            lastName = NameComplete[1]
+        else:
+            firstName = NameComplete[0]
+            lastName = NameComplete[0]
+
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
         if request.POST.get('type_payment', '') == 'pago_efectivo':
-            pass
+            print('pago_efectivo',MOUNT_TALLER_PYTHON,
+            firstName,
+            lastName,
+            email,
+            phone)
+            obj_pay = create_payment_pagoefectivo(
+                    MOUNT_TALLER_PYTHON,
+                    firstName,
+                    lastName,
+                    email,
+                    phone
+                    )
+            if obj_pay:
+                print(obj_pay)
+                ModelPagoEfectivo.objects.create(
+                            object=obj_pay.get('object', ''),
+                            create_data_time=obj_pay.get('creation_date', 0),
+                            expiration_date_time=obj_pay.get('expiration_date', 0),
+                            orde_id=obj_pay.get('id', ''),
+                            order_number=obj_pay.get('order_number', ''),
+                            amount=obj_pay.get('amount', 0),
+                            payment_code=obj_pay.get('payment_code', ''),
+                            currency_code=obj_pay.get('currency_code', ''),
+                            description=obj_pay.get('description', ''),
+                            state=obj_pay.get('state', ''),
+                            total_fee=obj_pay.get('total_fee', ''),
+                            net_amount=obj_pay.get('net_amount', ''),
+                            fee_details=obj_pay.get('fee_details', ''),
+                            updated_at=obj_pay.get('updated_at', ''),
+                            paid_at=obj_pay.get('paid_at', ''),
+                            available_on=obj_pay.get('available_on', ''),
+                            firstname=firstName,
+                            lastname=lastName,
+                            phone=phone,
+                            email=email,
+                            data_payment=obj_pay
+                )
+                return JsonResponse({'status': True, 'codigo_cip': obj_pay.get('payment_code', '')})
+            else:
+                return JsonResponse({'status': False, 'message': 'En mantenimiento, intentalo luego.'})
+
         elif request.POST.get('type_payment', '') == 'pago_tarjeta':
-            firstName = request.POST.get('firstName', '')
-            lastName = request.POST.get('lastName', '')
-            email = request.POST.get('email', '')
-            phone = request.POST.get('phone', '')
             token_payment_gateway = request.POST.get('token_payment_gateway', '')
             tk_django = request.POST.get('tk_django', '')
             print(firstName, lastName, token_payment_gateway, tk_django)
@@ -136,7 +192,7 @@ def checkout(request):
                     token_payment_gateway,
                     tk_django,
                     email,
-                    169*100, # verificar! enviar en centimos
+                    MOUNT_TALLER_PYTHON*100, # verificar! enviar en centimos
                     'Taller Python',
                     firstName,
                     lastName,

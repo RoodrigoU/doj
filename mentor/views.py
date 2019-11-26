@@ -3,17 +3,16 @@ import requests
 from .models import ModelAlumno
 from shop.models import ModelIps
 
-
 TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
 
 
 CURRENCY_CONVERT = {
-    'PE': {'mount': '159', 'simbol': 'S/. '},
+    'PE': {'mount': '120', 'simbol': 'S/. '},
     'CO': {'mount': '163,000', 'simbol': '$ '},
     'EC': {'mount': '1,200,000', 'simbol': '$ '},
-    'MX': {'mount': '917', 'simbol': '$ '},
+    'MX': {'mount': '689', 'simbol': '$ '},
     'SV': {'mount': '412,000', 'simbol': '$ '},
-    'ES': {'mount': '45', 'simbol': '€'},
+    'ES': {'mount': '44', 'simbol': '€'},
     'AR': {'mount': '2,850', 'simbol': '$'},
     'CL': {'mount': '37,500', 'simbol': '$'},
     'BO': {'mount': '327', 'simbol': '$'},
@@ -41,7 +40,7 @@ def get_currency(country_code):
         mount = CURRENCY_CONVERT[country_code]['mount']
         simbol = CURRENCY_CONVERT[country_code]['simbol']
     else:
-        mount = '49'
+        mount = '47'
         simbol = '$'
     return mount, simbol
 
@@ -123,17 +122,15 @@ def taller_python(request):
             ip=client_ip,
     )
     country_code = id_.country_code
+    # client_ip = '148.217.94.54'
+    # country_code = False
     if country_code:
         country_flag = id_.country_flag
-        country_flag = country_flag.replace('http://', 'https://')
         mount, simbol = get_currency(country_code)
     else:
         info_ip = get_info_ip(client_ip)
         country_code = info_ip['country_code']
         country_name = info_ip['country_name']
-        country_flag = info_ip['location']['country_flag']
-        if country_flag:
-            country_flag = country_flag.replace('http://', 'https://')
         calling_code = info_ip['location']['calling_code']
         id_.country_code = country_code
         id_.country_name = country_name

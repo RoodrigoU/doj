@@ -15,7 +15,7 @@
     <style media="screen">
         .modal {
     position: fixed;
-    top: 25%;
+    top: 15%;
     right: 3%;
     left: 3%;
     width: auto;
@@ -34,29 +34,38 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">PAGO EFECTIVO</h5>
+          <h5 class="modal-title">PagoEfectivo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-          <div class="col-md-12 mb-6">
-              <label for="lastName">Email</label>
-              <input type="text" class="form-control" id="email_2" placeholder="correo electrónico" value="" required="">
-              <div class="invalid-feedback">
-                  correo electrónico
+          <div class="col-md-12 mb-12">
+
+              <div id="data_pagoefectivo" style="text-align:center">
+
+                  <p style="font-size:1.4rem;color:green;margin-bottom:5px">Generando Código de Pago (CIP)</p>
+                  <!-- <p style="font-size:1.5rem;color:green;margin-bottom:5px" >¡Estas a punto de finalizar tu compra!</p>
+                  <p style="font-size:1.5rem;" >Código de Pago(CIP): <br>
+                      <b> <i style="color:black"></i></b>
+                  </p>
+                  <div class="title" >
+                      <img height="70" src="/static/base/img/logo-pago-efectivo.jpg" alt="">
+                  </div>
+                  <p style="font-size:1rem" >- Tambien te enviamos el código de pago por Email.</p>
+                  <p style="font-size:1rem" >- Realiza el depósito en efectivo con el Código de Pago en agencias, agentes o tu bodega más cercana.</p>
+
+                  <div class="title" >
+                      <img width="400px" src="/static/base/img/pago_efectivo_agentes.jpeg" alt="">
+                  </div>
+                  <br> -->
+
               </div>
 
-              <div id="data_pagoefectivo">
-                  <br><br>
-                  <!-- <h2>codigo cip: 19192182918</h2> -->
-              </div>
+
           </div>
+          <br>
 
-      </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-        <button id="btn_pagoefectivo" type="button" class="btn btn-primary">Generar Código de Pago</button>
       </div>
     </div>
   </div>
@@ -73,22 +82,23 @@
             <div class="container">
                             <div class="row py-5">
                                 <div class="col-md-4 order-md-2 mb-4">
+                                    <div class="title" > <img height="60" src="/static/base/img/ecommerce.png" alt=""> </div>
+                                    <br>
                                     <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                        <span class="text-muted">Carrito de Compras</span>
-                                        <span class="badge badge-secondary badge-pill">1</span>
+                                        <h4  style="font-size:1.5rem; ">Carrito de Compras</h4>
                                     </h4>
                                     <ul class="list-group mb-3">
                                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                                             <div>
-                                                <h6 class="my-0">Taller de Python</h6>
+                                                <h4 class="my-0">Taller de Python</h4>
                                                 <small class="text-muted">Dojopy</small>
                                             </div>
-                                            <span style="color:#31de79" class="text-muted">$ 49</span>
+                                            <span style="color:#31de79;font-size:1.5rem;" class="text-muted">$ 49</span>
                                         </li>
 
                                         <li class="list-group-item d-flex justify-content-between">
                                             <span>Total</span>
-                                            <strong style="font-size:1rem; color:#31de79">$ 49</strong>
+                                            <strong style="font-size:1.5rem; color:#31de79">$ 49</strong>
                                         </li>
                                     </ul>
 
@@ -97,22 +107,22 @@
                                     <h4 style="font-size:1.5rem" class="mb-3">Tus Datos</h4>
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
-                                                <label for="firstName">Nombre Completo</label>
-                                                <input type="text" class="form-control" id="firstName" placeholder="Nombre Completo" value="" required="">
+                                                <label for="firstName">Nombre Completo:</label>
+                                                <input type="text" class="form-control" id="NameComplete" placeholder="tu nombre completo" value="" required="true">
                                                 <div class="invalid-feedback">
                                                     Nombre es requerido.
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
-                                                <label for="email_1">Email</label>
-                                                <input type="text" class="form-control" id="email_1" placeholder="correo electrónico" value="" required="">
+                                                <label for="email_1">Email:</label>
+                                                <input type="text" class="form-control" id="email_1" placeholder="tu email" value="" required="true">
                                                 <div class="invalid-feedback">
                                                     correo electrónico
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
-                                                <label for="phone">Teléfono Móvil o Whatsapp</label>
-                                                <input type="text" class="form-control" id="phone" placeholder="Teléfono Móvil o Whatsapp" value="" required="">
+                                                <label for="phone">Teléfono Móvil o Whatsapp:</label>
+                                                <input type="text" class="form-control" id="phone" placeholder="Teléfono Móvil o Whatsapp" value="" required="true">
                                                 <div class="invalid-feedback">
                                                     Teléfono Móvil es requerido.
                                                 </div>
@@ -125,30 +135,30 @@
                                         <div class="d-block my-3">
 
                                             <div class="custom-control custom-radio">
-                                                <input id="pago_tarjeta" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                                                <input id="pago_tarjeta" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="true">
                                                 <label style="cursor: pointer;" class="custom-control-label" for="pago_tarjeta"> TARJETA
-                                                    <img style="margin-left:16px"  width="210" src="/static/base/img/metodo-pago.png" alt="">
+                                                    <img style="margin-left:16px"  width="200" src="/static/base/img/metodo-pago.png" alt="">
                                                 </label>
                                             </div>
                                             <hr>
                                             <div class="custom-control custom-radio">
-                                                <input id="pago_efectivo" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                                                <input id="pago_efectivo" name="paymentMethod" type="radio" class="custom-control-input" required="true">
                                                 <label style="cursor: pointer;" class="custom-control-label" for="pago_efectivo"> PAGO EFECTIVO
-                                                    <img style="margin-left:-4px" width="160" src="/static/base/img/logo-pago-efectivo.jpg" alt="">
+                                                    <img style="margin-left:-4px" width="150" src="/static/base/img/logo-pago-efectivo.jpg" alt="">
                                                 </label>
                                             </div>
                                             <hr>
                                             <div class="custom-control custom-radio">
-                                                <input id="pago_paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                                                <input id="pago_paypal" name="paymentMethod" type="radio" class="custom-control-input" required="true">
                                                 <label style="cursor: pointer;" class="custom-control-label" for="pago_paypal"> PAYPAL
-                                                    <img style="margin-left:60px" width="155" src="/static/base/img/metodo-paypal.png" alt="">
+                                                    <img style="margin-left:60px" width="145" src="/static/base/img/metodo-paypal.png" alt="">
                                                 </label>
                                             </div>
                                         </div>
 
                                         <br>
                                         <button id="buyButton" class="btn btn-success btn-lg btn-block">
-                                            <i class="fa fa-credit-card"></i> PROCEDER PAGO</button>
+                                             PROCEDER PAGO</button>
                                 </div>
                             </div>
                         </div>
@@ -176,17 +186,18 @@
 {% block stack_it %}
 {% endblock %}
 
+{% block float_chat %}
+{% endblock %}
+
 {% block my_script %}
 <script src="https://checkout.culqi.com/js/v3"></script>
 <script>
 
 
 function send_tk(token){
-        var firstName = $("#firstName").val()
-        var lastName = $("#lastName").val()
+        var nameComplete = $("#NameComplete").val()
         var phone = $("#phone").val()
 
-        // console.log(firstName, lastName, Culqi.token.email);
          $.ajax({
                type: "POST",
                url : '/checkout',
@@ -194,8 +205,7 @@ function send_tk(token){
                data: {
                       "type_payment": "pago_tarjeta",
                       "token_payment_gateway": token,
-                      "firstName": firstName,
-                      "lastName": lastName,
+                      "NameComplete": nameComplete,
                       "email": Culqi.token.email,
                       "phone": phone,
                       "tk_django": "{{tk_django}}"
@@ -248,33 +258,64 @@ function culqi() {
 });
 
 
-$("#btn_pagoefectivo").click(function(){
-    email_2 = $('#email_2').val()
+function generate_code_pagoefectivo(){
+    var email_1 = $('#email_1').val()
+    var nameComplete = $("#NameComplete").val()
+    var phone = $("#phone").val()
+
     $.ajax({
           type: "POST",
           url : "/checkout",
           enctype: 'multipart/form-data',
-          data: {"email_2": email_2, "type_payment": "pago_efectivo"},
+          data: {"email": email_1,
+                "NameComplete":nameComplete,
+                "phone":phone,
+                "type_payment": "pago_efectivo"},
           encode: true
       })
       .done(function(data){
-        console.log('ok');
-        $('#data_pagoefectivo').html('<h1> payload api recibido</h1>');
+          if (data.status) {
+              html_pagoefectivo = ' <p style="font-size:1.5rem;color:green;margin-bottom:5px" >¡Estas a punto de finalizar tu compra!</p> <p style="font-size:1.5rem;" >Código de Pago(CIP): <br> <b> <i style="color:black">'+ data.codigo_cip +'</i></b> </p> <div class="title" > <img height="70" src="/static/base/img/logo-pago-efectivo.jpg" alt=""> </div> <p style="font-size:1rem" >- Tambien te enviamos el código de pago por Email.</p> <p style="font-size:1rem" >- Realiza el depósito en efectivo con el Código de Pago en agencias, agentes o tu bodega más cercana.</p> <div class="title" > <img width="400px" src="/static/base/img/pago_efectivo_agentes.jpeg" alt=""> </div> <br>'
+              $('#data_pagoefectivo').html(html_pagoefectivo);
+              console.log(data.codigo_cip);
+          }else{
+              $('#data_pagoefectivo').html('<h1>'+ data.message +'</h1>' );
+              console.log(data.message);
+          }
       })
       .fail(function(data){
-         console.log('error');
+         $('#data_pagoefectivo').html('<h1> En mantenimiento, intentalo luego. </h1>' );
            });
-});
+};
+
 
     $('#buyButton').on('click', function(e) {
+        var email_1 = $('#email_1').val()
+        var firstName = $("#firstName").val()
+        var lastName = $("#lastName").val()
+        var phone = $("#phone").val()
+
+        if (email_1 == '') {
+            alert('completa el campo Email, por favor')
+            return
+        }else if (firstName == ''){
+            alert('completa el campo Nombre, por favor')
+            return
+        }else if (lastName == ''){
+            alert('completa el campo Apellido, por favor')
+            return
+        }else if (phone == ''){
+            alert('completa el campo Teléfono Móvil, por favor')
+            return
+        }
+
         if (document.getElementById('pago_tarjeta').checked) {
             Culqi.open();
             e.preventDefault();
         }
         else if (document.getElementById('pago_efectivo').checked) {
             $('#exampleModal').modal('show')
-            email_1 = $('#email_1').val()
-            document.getElementById("email_2").value = email_1;
+            generate_code_pagoefectivo();
         } else if (document.getElementById('pago_paypal').checked) {
             console.log('pago pago_paypal');
         }

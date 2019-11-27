@@ -1,6 +1,8 @@
 from shop.models import ModelIps
 import requests
 
+TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
+
 CURRENCY_CONVERT = {
     'PE': {'mount': '120', 'simbol': 'S/. '},
     'CO': {'mount': '163,000', 'simbol': '$ '},
@@ -26,7 +28,8 @@ def get_info_ip(ip):
         else:
             print('error')
             return False
-    except:
+    except Exception as e:
+        print(ex)
         return False
 
 
@@ -65,6 +68,8 @@ def get_mount_for_county(request):
         mount, simbol = get_currency(country_code)
     else:
         info_ip = get_info_ip(client_ip)
+        if not info_ip:
+            return mount, simbol, country_code
         country_code = info_ip['country_code']
         country_name = info_ip['country_name']
         calling_code = info_ip['location']['calling_code']

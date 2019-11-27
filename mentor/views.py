@@ -4,7 +4,6 @@ from .models import ModelAlumno
 from shop.models import ModelIps
 from modules.detect_currency_country import *
 
-TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
 
 def mentor(request):
     mobile = False

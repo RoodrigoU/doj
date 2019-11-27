@@ -7,11 +7,12 @@ import logzero
 from logzero import logger
 import datetime
 import requests
+from modules.detect_currency_country import *
 
 logzero.logfile("/tmp/django.log", maxBytes=1e6, backupCount=3)
 culqipy.public_key = 'pk_test_QfmMu2RtRgv6TEtg'
 culqipy.secret_key = 'sk_test_P92zyYskVlMZ3KqD'
-
+MOUNT_TALLER_PYTHON = 120
 
 def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_title, name, lastname, phone):
     dir_charge = {
@@ -72,7 +73,7 @@ def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
         expiration_date_timestamp = datetime.datetime.timestamp(time_max)
         order_number = 'pedido-{}'.format(str(expiration_date_timestamp).split('.')[0])
         payload = {
-                    "amount": mount*100,
+                    "amount": MOUNT_TALLER_PYTHON*100,
                     "currency_code": "PEN",
                     "description": "Taller de Python",
                     "order_number": order_number,
@@ -118,6 +119,7 @@ def contact(request):
 
 
 def checkout(request):
+    mount, simbol, country_code = get_mount_for_county(request)
     mobile = False
     try:
         mobile = request.user_agent.is_mobile
@@ -129,7 +131,6 @@ def checkout(request):
         uri_whatsapp = 'web'
 
     if request.method == "POST":
-        MOUNT_TALLER_PYTHON = 159
         NameComplete = request.POST.get('NameComplete', '')
         NameComplete = NameComplete.split(' ', 1)
         if len(NameComplete) == 2:
@@ -142,13 +143,13 @@ def checkout(request):
         email = request.POST.get('email', '')
         phone = request.POST.get('phone', '')
         if request.POST.get('type_payment', '') == 'pago_efectivo':
-            print('pago_efectivo',MOUNT_TALLER_PYTHON,
+            print('pago_efectivo',mount,
             firstName,
             lastName,
             email,
             phone)
             obj_pay = create_payment_pagoefectivo(
-                    MOUNT_TALLER_PYTHON,
+                    mount,
                     firstName,
                     lastName,
                     email,
@@ -206,7 +207,10 @@ def checkout(request):
         return render(
                 request, 'checkout.html',
                 {'uri_whatsapp': uri_whatsapp,
-                'tk_django': str(uuid4())}
+                'tk_django': str(uuid4()),
+                'mount': mount,
+                 'simbol': simbol,
+                 'country_flag': country_code.lower()}
             )
 
 

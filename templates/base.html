@@ -110,7 +110,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="/"> <img src="/static/base/img/dojopy-logo.png" alt="logo" width="180"> </a>
+                        <a class="navbar-brand" href="/"> <img src="/static/base/img/dojopy-logo.png" alt="logo" width="150"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -278,8 +278,6 @@
 
 {% block talleres %}
 
-<br>
-
     <!-- <section class="special_cource" id="talleres">
         <div class="container">
             <div class="row justify-content-center">
@@ -309,7 +307,7 @@
     <section class="learning_part" id="connect">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-xl-5">
+                <!-- <div class="col-xl-5">
                     <div class="section_tittle text-center">
                         <p><i> Now is better than never</i> </p>
                         <p><i> Zen Python</i> </p>
@@ -331,23 +329,25 @@
                 <button id="join_dojopy" class="col-4 btn btn_1" type="button">Enviar  <i class="ti-angle-right"></i></button>
                 <div class="col-12">
 
-                </div>
-                <div>
+                </div> -->
+                <div class="">
+                    <a href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola%2C%20quisiera%20más%20información." class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
+                        <b>
+                            Más Información y Costos
+                        </b>
+                    </a>
                     <br>
-                    <a target="_blank" href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola%21%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20mentoría%20del%20Taller%20Python.">
-                        <i style="padding:5px;margin:20px;font-size:4rem; color:green" class="fab fa-whatsapp" aria-hidden="true"></i>
-                    </a>
-
-                    <a target="_blank" href="https://m.me/dojopy">
-                        <i style="padding:5px;margin:20px;font-size:4rem" class="fab fa-facebook-messenger" aria-hidden="true"></i>
-                    </a>
-
-                    <div id="fb-root"></div>
-<div class="fb-like" data-href="https://www.facebook.com/dojopy/" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
                 </div>
+                <br><br><br><br>
+
+                <div id="fb-root"></div>
+                <div class="fb-like" data-href="https://www.facebook.com/dojopy/" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
             </div>
         </div>
+
+
     </section>
+
     {% endblock %}
 
 
@@ -356,10 +356,9 @@
             <i class="fab fa-whatsapp my-float"></i>
         </a>
 
-
-        <a href="https://m.me/dojopy" class="float2" target="_blank">
+        <!-- <a href="https://m.me/dojopy" class="float2" target="_blank">
         <i class='fab fa-facebook-messenger' style='font-size:52px;color:#006AFF; margin-top:5px'></i>
-        </a>
+        </a> -->
     {% endblock %}
 
     <!-- footer part start-->
@@ -371,10 +370,10 @@
                     <div class="single-footer-widget footer_2">
                         <h4>Contáctanos</h4>
                         <div class="contact_info">
+                            <p><span> Email : </span>info@dojopy.com </p>
                             <p><span> Phone: </span><a href="tel:+51935489552"> +51 935 489 552</a>
                                 <p><span> Phone: </span><a href="tel:+51935489552"> +51 01 6879 722</a>
                             <!-- <p><span> Phone :</span> +51 935 489 552</p> -->
-                            <p><span> Email : </span>lifehack.py@gmail.com </p>
                         </div>
                     </div>
                 </div>

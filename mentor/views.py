@@ -72,7 +72,7 @@ def taller_python(request):
         pass
     if mobile:
         uri_whatsapp = "api"
-        return render(request, 'taller_python_mobile.html', {'uri_whatsapp': uri_whatsapp,
+        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
          'uri_whatsapp': uri_whatsapp,
            'mount': mount,
             'simbol': simbol,

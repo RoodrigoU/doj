@@ -13,12 +13,12 @@ from django.conf import settings
 logzero.logfile("/tmp/django.log", maxBytes=1e6, backupCount=3)
 culqipy.public_key = settings.PK_CULQI
 culqipy.secret_key = settings.SK_CULQI
-MOUNT_TALLER_PYTHON = 45
+MOUNT_TALLER_PYTHON = 39
 
 
 def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_title, name, lastname, phone):
     dir_charge = {
-        'amount': 140*100,
+        'amount': 130*100,
         'capture': True,
         'country_code': 'PE',
         'currency_code': 'PEN',
@@ -75,7 +75,7 @@ def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
         expiration_date_timestamp = datetime.datetime.timestamp(time_max)
         order_number = 'pedido-{}'.format(str(expiration_date_timestamp).split('.')[0])
         payload = {
-                    "amount": 140*100,
+                    "amount": 130*100,
                     "currency_code": "PEN",
                     "description": "Mentoría Python",
                     "order_number": order_number,
@@ -160,7 +160,7 @@ def contact(request):
 def checkout(request):
     # mount, simbol, country_code = get_mount_for_county(request)
     simbol, country_code = '$', ''
-    mount = '42'
+    mount = '39'
     mobile = False
     try:
         mobile = request.user_agent.is_mobile

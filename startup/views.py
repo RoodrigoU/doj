@@ -8,18 +8,22 @@ from logzero import logger
 import datetime
 import requests
 from modules.detect_currency_country import *
+from django.conf import settings
 
 logzero.logfile("/tmp/django.log", maxBytes=1e6, backupCount=3)
-culqipy.public_key = 'pk_test_QfmMu2RtRgv6TEtg'
-culqipy.secret_key = 'sk_test_P92zyYskVlMZ3KqD'
-MOUNT_TALLER_PYTHON = 120
+culqipy.public_key = settings.PK_CULQI
+culqipy.secret_key = settings.SK_CULQI
+MOUNT_TALLER_PYTHON = 45
+
+print(settings.PK_CULQI)
+
 
 def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_title, name, lastname, phone):
     dir_charge = {
         'amount': monto,
         'capture': True,
         'country_code': 'PE',
-        'currency_code': 'PEN',
+        'currency_code': 'USD',
         'description': item_title,
         'installments': 0,
         'metadata': {'client_id': token_ecommerce},
@@ -74,8 +78,8 @@ def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
         order_number = 'pedido-{}'.format(str(expiration_date_timestamp).split('.')[0])
         payload = {
                     "amount": MOUNT_TALLER_PYTHON*100,
-                    "currency_code": "PEN",
-                    "description": "Taller de Python",
+                    "currency_code": "USD",
+                    "description": "Mentoría Python",
                     "order_number": order_number,
                     "client_details": {
                       "first_name": first_name,
@@ -155,7 +159,9 @@ def contact(request):
         return render(request, 'contacto.html', {'uri_whatsapp': uri_whatsapp})
 
 def checkout(request):
-    mount, simbol, country_code = get_mount_for_county(request)
+    # mount, simbol, country_code = get_mount_for_county(request)
+    simbol, country_code = '$', ''
+    mount = MOUNT_TALLER_PYTHON
     mobile = False
     try:
         mobile = request.user_agent.is_mobile
@@ -244,9 +250,11 @@ def checkout(request):
                 request, 'checkout.html',
                 {'uri_whatsapp': uri_whatsapp,
                 'tk_django': str(uuid4()),
-                'mount': mount,
-                 'simbol': simbol,
-                 'country_flag': country_code.lower()}
+                'mount': MOUNT_TALLER_PYTHON,
+                 'simbol': '$ ',
+                 'country_flag': '',
+                 'PK_CULQI': settings.PK_CULQI
+                 }
             )
 
 

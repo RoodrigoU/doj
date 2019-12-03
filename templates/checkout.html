@@ -90,7 +90,7 @@
                                     <ul class="list-group mb-3">
                                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                                             <div>
-                                                <h4 class="my-0">Taller de Python</h4>
+                                                <h4 class="my-0">Mentoría Python</h4>
                                                 <small class="text-muted">Dojopy</small>
                                             </div>
                                             <span style="color:#31de79;font-size:1.5rem;" class="text-muted">{{simbol}} {{mount}}</span>
@@ -236,18 +236,17 @@ function culqi() {
       }
 };
 
-    Culqi.publicKey = 'pk_test_QfmMu2RtRgv6TEtg';
+    Culqi.publicKey = '{{PK_CULQI}}';
     Culqi.settings({
-        title: "Taller de Python",
-        currency: 'PEN',
-        description: "Taller de Python",
-        amount: 120*100
+        title: "Mentoría Python",
+        currency: 'USD',
+        description: "Mentoría Python",
+        amount: 45*100
     });
     Culqi.options({
     lang: 'auto',
     modal: true,
     installments: false,
-    customButton: 'Pagar',
     style: {
       logo: 'https://dojopy.com/static/base/img/checkout-logo.png',
       maincolor: '#31de79',
@@ -318,6 +317,8 @@ function generate_code_pagoefectivo(){
             generate_code_pagoefectivo();
         } else if (document.getElementById('pago_paypal').checked) {
             console.log('pago pago_paypal');
+            window.location.href = "https://paypal.me/HenryVasquezConde/45";
+
         }
 
     });

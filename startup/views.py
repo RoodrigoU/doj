@@ -94,9 +94,10 @@ def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
             'Authorization': "Bearer {}".format(culqipy.secret_key)
             }
         response = requests.post(url, json=payload, headers=headers, timeout=60)
+        logger.info(response.text)
         return response.json()
     except Exception as e:
-        print(e)
+        logger.info(e)        
         return False
 
 

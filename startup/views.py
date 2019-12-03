@@ -110,13 +110,49 @@ def home(request):
     return render(request, 'base.html', {'uri_whatsapp': uri_whatsapp})
 
 
-def contact(request):
-    name = request.POST.get('username', '')
-    email = request.POST.get('email', '')
-    phone = request.POST.get('phone', '')
-    ModelContact.objects.get_or_create(name=name, email=email, phone=phone)
-    return JsonResponse({'status': 'ok'})
+def python_startup(request):
+    mobile = False
+    # mount, simbol, country_code = get_mount_for_county(request)
+    try:
+        mobile = request.user_agent.is_mobile
+    except:
+        pass
+    if mobile:
+        uri_whatsapp = "api"
+        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': '',
+            'simbol': '',
+            'country_flag': ''})
+    else:
+        uri_whatsapp = "web"
+        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': '',
+            'simbol': '',
+            'country_flag': ''})  #country_code.lower()
 
+
+def contact(request):
+    mobile = False
+    try:
+        mobile = request.user_agent.is_mobile
+    except Exception as e:
+        pass
+    if mobile:
+        uri_whatsapp = 'api'
+    else:
+        uri_whatsapp = 'web'
+    if request.method == "POST":
+        name = request.POST.get('username', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        message = request.POST.get('message', '')
+
+        ModelContact.objects.get_or_create(name=name, email=email, phone=phone, message=message)
+        return JsonResponse({'status': 'ok'})
+    elif request.method == "GET":
+        return render(request, 'contacto.html', {'uri_whatsapp': uri_whatsapp})
 
 def checkout(request):
     mount, simbol, country_code = get_mount_for_county(request)

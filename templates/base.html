@@ -121,16 +121,16 @@
                             id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/">Mentor</a>
+                                    <a class="nav-link" href="/">Dojopy</a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/mentor/python-de-cero-a-ninja">Mentorías</a>
+                                    <a class="nav-link" href="/startup/python">Mentorías</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/shop">Shop</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#connect">Contacto</a>
+                                    <a class="nav-link" href="/contacto">Contacto</a>
                                 </li>
                                 <!-- <li class="d-none d-lg-block">
                                     <a style="font-size:1rem" class="btn_1" href="#connect">Unete a Dojopy</a>
@@ -152,13 +152,13 @@
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h1>Dojopy Mentor</h1>
-                            <h2>Aprende a Programar Creando una Startup con tu Mentor</h2>
+                            <h1>Dojopy</h1>
+                            <h2>Aprende a Programar Creando una Startup con Python</h2>
                             <b>
                                 <p style="font-size:1.2rem; color:#0c2e60"><i> Now is better than never</i> </p>
                                 <p style="font-size:1.2rem; color:#0c2e60"><i> - Zen Python</i> </p>
                             </b>
-                            <a style="font-size:1.1rem;" href="/mentor/python-de-cero-a-ninja" class="btn_1">Empieza Ahora</a>
+                            <a style="font-size:1.1rem;" href="/startup/python" class="btn_1">Empieza Ahora</a>
 
                         </div>
                     </div>
@@ -187,24 +187,23 @@
                 </div>
                 <div class="col-md-5 col-lg-5">
                     <div class="learning_member_text">
-                        <h5>Dojopy Mentor</h5>
-                        <h2>¿QUÉ ES DOJOPY MENTOR?</h2>
+                        <h5>Dojopy</h5>
+                        <h2>¿QUÉ ES DOJOPY?</h2>
                         <p style="font-size:1.3rem">
-                            En Dojopy tu Mentor te guiará en la aventura que todo ninja programador recorre,
-                            con dinámicas de aprendizaje personalizado e individual, aprendiendo a programar desde cero a ninja.
-
+                            En Dojopy tu Mentor te guiará, motivará y responderá todas la preguntas
+                             o dudas que surjan en esta aventura, con dinámicas de aprendizaje grupal (máximo 5 alumnos por sesión),
+                            desarrollando proyectos, compartiendo pantalla, videollamada y código en vivo (Live Coding). <br>
+                            Con acceso a la plataforma de proyectos, código y videos exclusivos.
                             <br>
                             Desarrolla proyectos
                             <a target="_blank"  href="https://economiatic.com/que-es-una-startup/">
                                 Startup
-                            </a> a traves del
+                            </a> mediante
                             <a target="_blank"  href="https://www.inboundcycle.com/blog-de-inbound-marketing/bid/189238/qu-es-el-mvp-o-producto-m-nimo-viable">
                                 MVP(producto mínimo viable)
                             </a>con tu Mentor,<br>
-                            en cualquier momento y lugar del mundo,
-                            <br>
-                            recibe mentorías en vivo (live coding),
-                            forma parte de  nuevas experiencias de aprendizaje.                        </p>
+                            en cualquier momento y lugar del mundo.
+                            <br>              </p>
                     </div>
                 </div>
             </div>
@@ -220,13 +219,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-6">
                         <div class="single_member_counter">
-                            <span class="counter">13</span>
+                            <span class="counter">5</span>
                             <h4>Mentores</h4>
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-6">
                         <div class="single_member_counter">
-                            <span class="counter">25</span>
+                            <span class="counter">20</span>
                             <h4>Alumnos Aprendiendo </h4>
                         </div>
                     </div>
@@ -431,12 +430,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Dojop
     <script type="text/javascript">
 
 
-    function send_contact(email, username, phone){
+    function send_contact(email, username, phone, message){
              $.ajax({
                    type: "POST",
-                   url : "/contact",
+                   url : "/contacto",
                    enctype: 'multipart/form-data',
-                   data: {"username": username, "email": email, "phone": phone},
+                   data: {"username": username, "email": email, "phone": phone, "message":message},
                    encode: true
                })
                .done(function(data){
@@ -453,11 +452,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Dojop
                 email = $("#email").val()
                 username = $("#username").val()
                 phone =  $("#phone").val()
+                message = $("#message").val()
                 if (phone == ""){
                   alert('Ingresa tu telefono móvil para contactarte')
                   return
                 }
-                send_contact(email, username, phone);
+                send_contact(email, username, phone, message);
             });
             $('#join_dojopy_').on('click', function(e) {
                 email = $("#email").val()
@@ -465,7 +465,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Dojop
                   alert('Ingresa tu Email')
                   return
                 }
-                send_contact(email, 'anonimo');
+                send_contact(email, username, phone, message);
             });
 
     </script>

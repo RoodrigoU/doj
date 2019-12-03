@@ -5,33 +5,6 @@ from shop.models import ModelIps
 from modules.detect_currency_country import *
 
 
-def mentor(request):
-    mobile = False
-    try:
-        mobile = request.user_agent.is_mobile
-    except:
-        pass
-    if mobile:
-        uri_whatsapp = 'api'
-    else:
-        uri_whatsapp = 'web'
-    return render(request, 'base_mentor.html', {'uri_whatsapp': uri_whatsapp})
-
-
-def demo(request):
-    mobile = False
-    try:
-        mobile = request.user_agent.is_mobile
-    except:
-        pass
-    if mobile:
-        uri_whatsapp = 'api'
-    else:
-        uri_whatsapp = 'web'
-
-    return render(request, 'demo.html', {'uri_whatsapp': uri_whatsapp})
-
-
 def certificate(request, name_url):
     mobile = False
     try:
@@ -61,26 +34,3 @@ def certificate(request, name_url):
                 'name_taller': name_taller,
                 'file_certificate': file_certificate
             })
-
-
-def taller_python(request):
-    mobile = False
-    mount, simbol, country_code = get_mount_for_county(request)
-    try:
-        mobile = request.user_agent.is_mobile
-    except:
-        pass
-    if mobile:
-        uri_whatsapp = "api"
-        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
-         'uri_whatsapp': uri_whatsapp,
-           'mount': mount,
-            'simbol': simbol,
-            'country_flag': country_code.lower()})
-    else:
-        uri_whatsapp = "web"
-        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
-         'uri_whatsapp': uri_whatsapp,
-           'mount': mount,
-            'simbol': simbol,
-            'country_flag': country_code.lower()})

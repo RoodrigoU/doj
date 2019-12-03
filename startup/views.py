@@ -15,15 +15,13 @@ culqipy.public_key = settings.PK_CULQI
 culqipy.secret_key = settings.SK_CULQI
 MOUNT_TALLER_PYTHON = 45
 
-print(settings.PK_CULQI)
-
 
 def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_title, name, lastname, phone):
     dir_charge = {
-        'amount': monto,
+        'amount': 140*100,
         'capture': True,
         'country_code': 'PE',
-        'currency_code': 'USD',
+        'currency_code': 'PEN',
         'description': item_title,
         'installments': 0,
         'metadata': {'client_id': token_ecommerce},
@@ -77,8 +75,8 @@ def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
         expiration_date_timestamp = datetime.datetime.timestamp(time_max)
         order_number = 'pedido-{}'.format(str(expiration_date_timestamp).split('.')[0])
         payload = {
-                    "amount": MOUNT_TALLER_PYTHON*100,
-                    "currency_code": "USD",
+                    "amount": 140*100,
+                    "currency_code": "PEN",
                     "description": "Mentoría Python",
                     "order_number": order_number,
                     "client_details": {
@@ -97,7 +95,7 @@ def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
         logger.info(response.text)
         return response.json()
     except Exception as e:
-        logger.info(e)        
+        logger.info(e)
         return False
 
 
@@ -162,7 +160,7 @@ def contact(request):
 def checkout(request):
     # mount, simbol, country_code = get_mount_for_county(request)
     simbol, country_code = '$', ''
-    mount = MOUNT_TALLER_PYTHON
+    mount = '42'
     mobile = False
     try:
         mobile = request.user_agent.is_mobile

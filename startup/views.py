@@ -136,6 +136,29 @@ def python_startup(request):
             'country_flag': ''})  #country_code.lower()
 
 
+def python_plan_mes_1_2(request):
+    mobile = False
+    # mount, simbol, country_code = get_mount_for_county(request)
+    try:
+        mobile = request.user_agent.is_mobile
+    except:
+        pass
+    if mobile:
+        uri_whatsapp = "api"
+        return render(request, 'python_plan_mes_1_2.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': '',
+            'simbol': '',
+            'country_flag': ''})
+    else:
+        uri_whatsapp = "web"
+        return render(request, 'python_plan_mes_1_2.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': '',
+            'simbol': '',
+            'country_flag': ''})  #country_code.lower()
+
+
 def contact(request):
     mobile = False
     try:

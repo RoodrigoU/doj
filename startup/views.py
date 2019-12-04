@@ -18,7 +18,7 @@ MOUNT_TALLER_PYTHON = 39
 
 def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_title, name, lastname, phone):
     dir_charge = {
-        'amount': 130*100,
+        'amount': 129*100,
         'capture': True,
         'country_code': 'PE',
         'currency_code': 'PEN',
@@ -75,7 +75,7 @@ def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
         expiration_date_timestamp = datetime.datetime.timestamp(time_max)
         order_number = 'pedido-{}'.format(str(expiration_date_timestamp).split('.')[0])
         payload = {
-                    "amount": 130*100,
+                    "amount": 129*100,
                     "currency_code": "PEN",
                     "description": "Mentoría Python",
                     "order_number": order_number,
@@ -115,7 +115,7 @@ def home(request):
 
 def python_startup(request):
     mobile = False
-    # mount, simbol, country_code = get_mount_for_county(request)
+    mount, simbol, country_code = get_mount_for_county(request)
     try:
         mobile = request.user_agent.is_mobile
     except:
@@ -124,16 +124,16 @@ def python_startup(request):
         uri_whatsapp = "api"
         return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
          'uri_whatsapp': uri_whatsapp,
-           'mount': '',
-            'simbol': '',
-            'country_flag': ''})
+           'mount': mount,
+            'simbol': simbol,
+            'country_flag': country_code.lower()})
     else:
         uri_whatsapp = "web"
         return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
          'uri_whatsapp': uri_whatsapp,
-           'mount': '',
-            'simbol': '',
-            'country_flag': ''})  #country_code.lower()
+           'mount': mount,
+            'simbol': simbol,
+            'country_flag': country_code.lower()})  #country_code.lower()
 
 
 def python_plan_mes_1_2(request):

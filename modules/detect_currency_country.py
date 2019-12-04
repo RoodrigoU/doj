@@ -4,18 +4,13 @@ import requests
 TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
 
 CURRENCY_CONVERT = {
-    'PE': {'mount': '120', 'simbol': 'S/. '},
-    'CO': {'mount': '163,000', 'simbol': '$ '},
-    'EC': {'mount': '1,200,000', 'simbol': '$ '},
-    'MX': {'mount': '689', 'simbol': '$ '},
-    'SV': {'mount': '412,000', 'simbol': '$ '},
-    'ES': {'mount': '44', 'simbol': '€'},
-    'AR': {'mount': '2,850', 'simbol': '$'},
-    'CL': {'mount': '37,500', 'simbol': '$'},
-    'BO': {'mount': '327', 'simbol': '$'},
-    'PY': {'mount': '303,270', 'simbol': '$'},
-    'UY': {'mount': '1,775', 'simbol': '$'},
-    'NI': {'mount': '1,595', 'simbol': '$'},
+    'PE': {'mount': '129', 'simbol': ' S/. '},
+    'CO': {'mount': '136,652', 'simbol': 'CO $ '},
+    'EC': {'mount': '39', 'simbol': 'US $ '},
+    'MX': {'mount': '760', 'simbol': 'MX $ '},
+    'ES': {'mount': '35', 'simbol': '€'},
+    'AR': {'mount': '2,300', 'simbol': 'AR $'},
+    'CL': {'mount': '31,300', 'simbol': 'CL $'},
 }
 
 
@@ -39,8 +34,8 @@ def get_currency(country_code):
         mount = CURRENCY_CONVERT[country_code]['mount']
         simbol = CURRENCY_CONVERT[country_code]['simbol']
     else:
-        mount = '47'
-        simbol = '$'
+        mount = '39'
+        simbol = 'US $'
     return mount, simbol
 
 

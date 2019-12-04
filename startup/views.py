@@ -10,15 +10,19 @@ import requests
 from modules.detect_currency_country import *
 from django.conf import settings
 
+from shop.models import ModelIps
+
+ModelIps.objects.all().delete()
+
 logzero.logfile("/tmp/django.log", maxBytes=1e6, backupCount=3)
 culqipy.public_key = settings.PK_CULQI
 culqipy.secret_key = settings.SK_CULQI
-MOUNT_TALLER_PYTHON = 39
+MOUNT_TALLER_PYTHON = 35
 
 
 def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_title, name, lastname, phone):
     dir_charge = {
-        'amount': 129*100,
+        'amount': 119*100,
         'capture': True,
         'country_code': 'PE',
         'currency_code': 'PEN',
@@ -75,7 +79,7 @@ def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
         expiration_date_timestamp = datetime.datetime.timestamp(time_max)
         order_number = 'pedido-{}'.format(str(expiration_date_timestamp).split('.')[0])
         payload = {
-                    "amount": 129*100,
+                    "amount": 119*100,
                     "currency_code": "PEN",
                     "description": "Mentoría Python",
                     "order_number": order_number,
@@ -181,9 +185,8 @@ def contact(request):
         return render(request, 'contacto.html', {'uri_whatsapp': uri_whatsapp})
 
 def checkout(request):
-    # mount, simbol, country_code = get_mount_for_county(request)
-    simbol, country_code = '$', ''
-    mount = '39'
+    mount, simbol, country_code = get_mount_for_county(request)
+    # simbol, country_code = '$', ''
     mobile = False
     try:
         mobile = request.user_agent.is_mobile
@@ -258,7 +261,7 @@ def checkout(request):
                     tk_django,
                     email,
                     MOUNT_TALLER_PYTHON*100, # verificar! enviar en centimos
-                    'Taller Python',
+                    'Mentoría Python',
                     firstName,
                     lastName,
                     phone
@@ -272,8 +275,8 @@ def checkout(request):
                 request, 'checkout.html',
                 {'uri_whatsapp': uri_whatsapp,
                 'tk_django': str(uuid4()),
-                'mount': MOUNT_TALLER_PYTHON,
-                 'simbol': '$ ',
+                'mount': mount,
+                 'simbol': simbol,
                  'country_flag': '',
                  'PK_CULQI': settings.PK_CULQI
                  }

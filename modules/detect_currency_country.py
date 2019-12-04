@@ -4,13 +4,13 @@ import requests
 TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
 
 CURRENCY_CONVERT = {
-    'PE': {'mount': '129', 'simbol': ' S/. '},
-    'CO': {'mount': '136,652', 'simbol': 'CO $ '},
-    'EC': {'mount': '39', 'simbol': 'US $ '},
-    'MX': {'mount': '760', 'simbol': 'MX $ '},
-    'ES': {'mount': '35', 'simbol': '€'},
-    'AR': {'mount': '2,300', 'simbol': 'AR $'},
-    'CL': {'mount': '31,300', 'simbol': 'CL $'},
+    'PE': {'mount': '119', 'simbol': ' S/. '},
+    'CO': {'mount': '121,690', 'simbol': 'CO $ '},
+    'EC': {'mount': '35', 'simbol': 'US $ '},
+    'MX': {'mount': '685', 'simbol': 'MX $ '},
+    'ES': {'mount': '32', 'simbol': '€'},
+    'AR': {'mount': '2,090', 'simbol': 'AR $'},
+    'CL': {'mount': '27,590', 'simbol': 'CL $'},
 }
 
 
@@ -34,7 +34,7 @@ def get_currency(country_code):
         mount = CURRENCY_CONVERT[country_code]['mount']
         simbol = CURRENCY_CONVERT[country_code]['simbol']
     else:
-        mount = '39'
+        mount = '35'
         simbol = 'US $'
     return mount, simbol
 

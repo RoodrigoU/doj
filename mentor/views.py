@@ -17,6 +17,8 @@ def python_mentor(request):
          'uri_whatsapp': uri_whatsapp,
            'mount': mount,
             'simbol': simbol,
+            'resolution_x': '310',
+            'resolution_y': '360',
             'country_flag': country_code.lower()})
     else:
         uri_whatsapp = "web"
@@ -24,6 +26,8 @@ def python_mentor(request):
          'uri_whatsapp': uri_whatsapp,
            'mount': mount,
             'simbol': simbol,
+            'resolution_x': '565',
+            'resolution_y': '315',
             'country_flag': country_code.lower()})  #country_code.lower()
 
 

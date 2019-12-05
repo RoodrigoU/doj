@@ -34,7 +34,7 @@ def home(request):
         uri_whatsapp = 'api'
     else:
         uri_whatsapp = 'web'
-    return render(request, 'base.html', {'uri_whatsapp': uri_whatsapp})
+    return render(request, 'python_startup.html', {'uri_whatsapp': uri_whatsapp})
 
 
 def python_startup(request):

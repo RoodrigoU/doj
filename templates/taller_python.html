@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 <title>Dojopy - Taller Python</title>
@@ -38,8 +39,6 @@
 
 <section class="course_details_area section_padding">
 
-
-
     <div class="container">
 
         <div class="row">
@@ -59,7 +58,7 @@
                         <br>
 
 
-                            <!-- <div class="container">
+                            <div class="container">
                                 <p id="timer" style="font-size:1.5rem;text-align:-webkit-center;color:#0c2e60">
                                     OFERTA TERMINA EN: <br>
                                     <span id="timer-days"></span>:
@@ -67,10 +66,10 @@
                                     <span id="timer-mins"></span>:
                                     <span id="timer-secs"></span>
                                 </p>
-                            </div> -->
-                            <a href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola!%2C%20quiero%20inscribirme." class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
+                            </div>
+                            <a href="/contacto" class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
                                 <b>
-                                    QUIERO INSCRIBIRME
+                                    INSCRIBIRME AHORA
                                 </b>
                             </a>
                             <a href="/checkout" class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center;background-image: linear-gradient(to left, #FC42CC 0%, #FF446B 100%);">
@@ -321,15 +320,7 @@ Python es uno de los lenguajes de programación más valorados y usados a nivel 
                     </div>
                 </div>
 
-                <br/>
 
-
-
-                <a href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola!%2C%20quiero%20inscribirme." class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
-                    <b>
-                        QUIERO INSCRIBIRME
-                    </b>
-                </a>
                 <br>
                 <div class="content_wrapper">
                     <div class="blog_details">
@@ -345,7 +336,6 @@ Python es uno de los lenguajes de programación más valorados y usados a nivel 
                                     <li style="margin:5px">Auriculares con micrófonos para Live Coding y videollamada</li>
                                 </ul>
                             </p>
-                            <br/>
                         </div>
                     </div>
                 </div>
@@ -353,13 +343,6 @@ Python es uno de los lenguajes de programación más valorados y usados a nivel 
                 {% include "fecha_inicio.html" %}
 
                 <br>
-                <a href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola!%2C%20quiero%20inscribirme." class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
-                    <b>
-                        QUIERO INSCRIBIRME
-                    </b>
-                </a>
-                <br>
-
             </div>
 
 
@@ -413,9 +396,9 @@ Python es uno de los lenguajes de programación más valorados y usados a nivel 
 
                         </ul>
                         <br>
-                        <a href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola%2C%20quiero%20inscribirme." class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
+                        <a href="/contacto" class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
                             <b>
-                                QUIERO INSCRIBIRME
+                                INSCRIBIRME AHORA
                             </b>
                         </a>
                     </div>

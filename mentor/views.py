@@ -1,7 +1,6 @@
 from django.shortcuts import render
 import requests
 from .models import ModelAlumno
-from shop.models import ModelIps
 from modules.detect_currency_country import *
 
 

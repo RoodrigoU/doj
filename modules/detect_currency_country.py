@@ -1,4 +1,4 @@
-from shop.models import ModelIps
+from startup.models import ModelIps
 import requests
 
 TK_DETECT_COUNTRY = 'dfc4899fc100cb167072406ee001ac81'
@@ -57,8 +57,6 @@ def get_mount_for_county(request):
             ip=client_ip,
     )
     country_code = id_.country_code
-    # client_ip = '148.217.94.54'
-    # country_code = False
     if country_code:
         mount, simbol = get_currency(country_code)
     else:

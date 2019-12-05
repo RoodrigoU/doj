@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from .models import ModelContact, ModelPayment, ModelPagoEfectivo
+from .models import (
+                        ModelContact,
+                        ModelPayment,
+                        ModelPagoEfectivo,
+                        ModelIps
+                          )
 from django.http import JsonResponse
 import culqipy
 from uuid import uuid4
@@ -10,14 +15,98 @@ import requests
 from modules.detect_currency_country import *
 from django.conf import settings
 
-from shop.models import ModelIps
 
 ModelIps.objects.all().delete()
-
 logzero.logfile("/tmp/django.log", maxBytes=1e6, backupCount=3)
 culqipy.public_key = settings.PK_CULQI
 culqipy.secret_key = settings.SK_CULQI
 MOUNT_TALLER_PYTHON = 35
+
+
+# Create your views here.
+def home(request):
+    mobile = False
+    try:
+        mobile = request.user_agent.is_mobile
+    except Exception as e:
+        pass
+    if mobile:
+        uri_whatsapp = 'api'
+    else:
+        uri_whatsapp = 'web'
+    return render(request, 'base.html', {'uri_whatsapp': uri_whatsapp})
+
+
+def python_startup(request):
+    mobile = False
+    mount, simbol, country_code = get_mount_for_county(request)
+    try:
+        mobile = request.user_agent.is_mobile
+    except:
+        pass
+    if mobile:
+        uri_whatsapp = "api"
+        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': mount,
+            'simbol': simbol,
+            'country_flag': country_code.lower()})
+    else:
+        uri_whatsapp = "web"
+        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': mount,
+            'simbol': simbol,
+            'country_flag': country_code.lower()})  #country_code.lower()
+
+
+def contact(request):
+    mobile = False
+    try:
+        mobile = request.user_agent.is_mobile
+    except Exception as e:
+        pass
+    if mobile:
+        uri_whatsapp = 'api'
+    else:
+        uri_whatsapp = 'web'
+    if request.method == "POST":
+        name = request.POST.get('username', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        message = request.POST.get('message', '')
+        ModelContact.objects.get_or_create(
+                name=name,
+                email=email,
+                phone=phone,
+                message=message
+                )
+        return JsonResponse({'status': 'ok'})
+    elif request.method == "GET":
+        return render(request, 'contacto.html', {'uri_whatsapp': uri_whatsapp})
+
+
+def python_plan_mes_1_2(request):
+    mobile = False
+    # mount, simbol, country_code = get_mount_for_county(request)
+    try:
+        mobile = request.user_agent.is_mobile
+    except:
+        pass
+    if mobile:
+        uri_whatsapp = "api"
+        return render(request, 'python_plan_mes_1_2.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': '',
+            'simbol': '',
+            'country_flag': ''})
+    else:
+        uri_whatsapp = "web"
+        return render(request, 'python_plan_mes_1_2.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': '',
+            'simbol': '',
+            'country_flag': ''})  #country_code.lower()
 
 
 def create_payment_checkout(token_culqi, token_ecommerce, email, monto, item_title, name, lastname, phone):
@@ -102,87 +191,6 @@ def create_payment_pagoefectivo(mount, first_name, last_name, email, phone):
         logger.info(e)
         return False
 
-
-# Create your views here.
-def home(request):
-    mobile = False
-    try:
-        mobile = request.user_agent.is_mobile
-    except Exception as e:
-        pass
-    if mobile:
-        uri_whatsapp = 'api'
-    else:
-        uri_whatsapp = 'web'
-    return render(request, 'base.html', {'uri_whatsapp': uri_whatsapp})
-
-
-def python_startup(request):
-    mobile = False
-    mount, simbol, country_code = get_mount_for_county(request)
-    try:
-        mobile = request.user_agent.is_mobile
-    except:
-        pass
-    if mobile:
-        uri_whatsapp = "api"
-        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
-         'uri_whatsapp': uri_whatsapp,
-           'mount': mount,
-            'simbol': simbol,
-            'country_flag': country_code.lower()})
-    else:
-        uri_whatsapp = "web"
-        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
-         'uri_whatsapp': uri_whatsapp,
-           'mount': mount,
-            'simbol': simbol,
-            'country_flag': country_code.lower()})  #country_code.lower()
-
-
-def python_plan_mes_1_2(request):
-    mobile = False
-    # mount, simbol, country_code = get_mount_for_county(request)
-    try:
-        mobile = request.user_agent.is_mobile
-    except:
-        pass
-    if mobile:
-        uri_whatsapp = "api"
-        return render(request, 'python_plan_mes_1_2.html', {'uri_whatsapp': uri_whatsapp,
-         'uri_whatsapp': uri_whatsapp,
-           'mount': '',
-            'simbol': '',
-            'country_flag': ''})
-    else:
-        uri_whatsapp = "web"
-        return render(request, 'python_plan_mes_1_2.html', {'uri_whatsapp': uri_whatsapp,
-         'uri_whatsapp': uri_whatsapp,
-           'mount': '',
-            'simbol': '',
-            'country_flag': ''})  #country_code.lower()
-
-
-def contact(request):
-    mobile = False
-    try:
-        mobile = request.user_agent.is_mobile
-    except Exception as e:
-        pass
-    if mobile:
-        uri_whatsapp = 'api'
-    else:
-        uri_whatsapp = 'web'
-    if request.method == "POST":
-        name = request.POST.get('username', '')
-        email = request.POST.get('email', '')
-        phone = request.POST.get('phone', '')
-        message = request.POST.get('message', '')
-
-        ModelContact.objects.get_or_create(name=name, email=email, phone=phone, message=message)
-        return JsonResponse({'status': 'ok'})
-    elif request.method == "GET":
-        return render(request, 'contacto.html', {'uri_whatsapp': uri_whatsapp})
 
 def checkout(request):
     mount, simbol, country_code = get_mount_for_county(request)

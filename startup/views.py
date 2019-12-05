@@ -46,14 +46,14 @@ def python_startup(request):
         pass
     if mobile:
         uri_whatsapp = "api"
-        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
+        return render(request, 'python_startup.html', {'uri_whatsapp': uri_whatsapp,
          'uri_whatsapp': uri_whatsapp,
            'mount': mount,
             'simbol': simbol,
             'country_flag': country_code.lower()})
     else:
         uri_whatsapp = "web"
-        return render(request, 'taller_python.html', {'uri_whatsapp': uri_whatsapp,
+        return render(request, 'python_startup.html', {'uri_whatsapp': uri_whatsapp,
          'uri_whatsapp': uri_whatsapp,
            'mount': mount,
             'simbol': simbol,

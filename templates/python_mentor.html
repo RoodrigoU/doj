@@ -1,0 +1,463 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Dojopy - Taller Python</title>
+{% endblock %}
+
+{% block preview_fb %}
+    <!--FACEBOOK-->
+    <meta property="og:image" content="/static/base/img/image_mentor.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.dojopy.com"/>
+    <meta property="og:title" content="Dojopy Startup"/>
+    <meta property="og:description" content="Aprende a Programar Creando una Startup con Python." />
+{% endblock %}
+
+
+{% block main_content %}
+
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Python de Cero a Ninja<br> con tu Mentor</h2>
+                        <p style="font-size:1.4rem; color:white"><i> Now is better than never</i> </p>
+                        <p style="font-size:1.4rem; color:white"><i> - Zen Python</i> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+
+
+<section class="course_details_area section_padding">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-7 course_details_left">
+
+                <!-- <div class="content_wrapper">
+                    <div class="blog_details">
+                        <div class="content">
+                            <h3 class="title">Mentoría Online en Vivo</h3>
+                        <h4 style="text-align:center;font-size:1.7rem; color:#31de79;font-weight:575; padding:5px; margin-top:7px" > {{simbol}} {{mount}}  / MENSUAL <br>
+                                <span style="font-size:1.2rem">(PAGAS MES A MES)</span>
+                        </h4>
+                        <div class="col-12" style="text-align: center; padding-bottom:10px">
+                            <span  style="font-size:30px" class="flag-icon flag-icon-{{country_flag}}"></span>
+                        </div>
+                        <br>
+
+
+                            <div class="container">
+                                <p id="timer" style="font-size:1.5rem;text-align:-webkit-center;color:#0c2e60">
+                                    OFERTA TERMINA EN: <br>
+                                    <span id="timer-days"></span>:
+                                    <span id="timer-hours"></span>:
+                                    <span id="timer-mins"></span>:
+                                    <span id="timer-secs"></span>
+                                </p>
+                            </div>
+                            <a href="/contacto" class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
+                                <b>
+                                    INSCRIBIRME AHORA
+                                </b>
+                            </a>
+                            <a href="/checkout" class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center;background-image: linear-gradient(to left, #FC42CC 0%, #FF446B 100%);">
+                                <b>
+                                    PAGAR PRIMER MES
+                                </b>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <br>
+
+                <div class="content_wrapper">
+                    <div class="blog_details">
+                        <div class="content">
+                            <div class="title">
+                                <img height="117" src="/static/base/img/img_mentor.png" alt="">
+                            </div>
+
+                            <h3 class="title">¿ POR QUÉ UN MENTOR ?</h3>
+                            <p style="font-size:1.1rem">
+                                En Dojopy tu Mentor te guiará, motivará y responderá todas la preguntas
+                                 o dudas que surjan en esta aventura, con dinámicas de aprendizaje grupal y personalizado (máximo 7 alumnos por sesión videollamada),
+                                desarrollando proyectos, compartiendo pantalla, videollamada y código en vivo. <br>
+                                Con acceso a la plataforma de proyectos, código y videos exclusivos.
+                            </p>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="content_wrapper">
+                    <div class="blog_details">
+                        <div class="content">
+                            <div class="title">
+                                <img height="120" src="/static/base/img/python_logo.png" alt="">
+                            </div>
+                            <h3 class="title">¿ POR QUÉ APRENDER PYTHON ?</h3>
+                            <p style="font-size:1.1rem">
+Python es uno de los lenguajes de programación más valorados y usados a nivel mundial
+ según estadísticas de <a target="_blank" href="https://insights.stackoverflow.com/survey/2019">Stack Overflow</a>
+  la plataforma más grande de programadores,
+ multitud de Startups y empresas lo utilizan en su día a día como Instagram, Spotify,
+  Amazon, Netflix, Google, Facebook, Dropbox, Youtube, etc <br>
+  Python es flexible, claro y con un código legible para todos.
+
+                            </p>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+               <div class="content_wrapper">
+                   <div class="blog_details">
+                       <div class="content">
+                           <div class="title">
+                               <img height="100" src="/static/base/img/crecimiento.png" alt="">
+                           </div>
+                           <h3 class="title">¿ SABES CUANTO GANA UN PROGRAMADOR DE PYTHON ?</h3>
+                           <p style="font-size:1.1rem">
+                               En Latinoamérica, Europa y EEUU los sueldos anuales de un progamador de Python están
+                                alrededor de $25.000 usd ~ $57.000 usd ~ $116.000 usd. <br>
+                                “Python el lenguaje de Programación mejor Pagado y con más Futuro“.
+                           </p>
+                           <br/>
+                       </div>
+                   </div>
+               </div>
+                <br>
+
+
+                <div class="content_wrapper">
+                    <div class="blog_details">
+                        <div class="content">
+                            <div class="title">
+                                <img height="80" src="/static/base/img/Alumnos-interno.jpg" alt="">
+                            </div>
+                            <h3 class="title">¿ QUÉ DICEN ALGUNOS DE NUESTROS <br> ALUMNO(A)S ?</h3>
+
+                            <div class="comments-area">
+
+                                <div class="comment-list">
+                                    <div class="single-comment single-reviews justify-content-between d-flex">
+                                        <div class="user justify-content-between d-flex">
+                                            <div>
+                                                <img width="75" src="/static/base/img/user-image.png" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                    <b>
+                                                        <p  style="color:#666666">
+                                                            Pedro Oscco
+                                                        </p>
+                                                    </b>
+                                                <div class="rating">
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                </div>
+
+                                                <p class="comment">
+                                Aprendizaje claro y seguro, gracias lo certifico!
+                                                </p>
+                                                <p> Aprende desde Perú:  <img width="40" src="/static/base/img/peru-flag.png" alt="Perú"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="comment-list">
+                                    <div class="single-comment single-reviews justify-content-between d-flex">
+                                        <div class="user justify-content-between d-flex">
+                                            <div>
+                                                <img width="75" src="/static/base/img/user-image.png" alt="México">
+                                            </div>
+                                            <div class="desc">
+                                                <b>
+                                                    <p  style="color:#666666">
+                                                        Esteban Pacheco
+                                                    </p>
+                                                </b>
+                                                <div class="rating">
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                </div>
+                                                <p class="comment">
+                                                    Excelentes cursos, y muy bien explicado.
+                                                </p>
+                                                <p>Aprende desde México:
+                                                    <img width="40" src="/static/base/img/mexico-flag.png" alt="peru">
+                                                </p>                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment-list">
+                                    <div class="single-comment single-reviews justify-content-between d-flex">
+                                        <div class="user justify-content-between d-flex">
+                                            <div>
+                                                <img width="75" src="/static/base/img/user-image.png" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                    <b>
+                                                        <p  style="color:#666666">
+                                                            Isabella Maria
+                                                        </p>
+                                                    </b>
+                                                <div class="rating">
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                </div>
+
+                                                <p class="comment">
+                                                        Fueron semanas de mucho aprendizaje!
+                                                </p>
+                                                <p> Aprende desde Colombia:  <img width="40" src="/static/base/img/colombia.png" alt="Perú"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment-list">
+                                    <div class="single-comment single-reviews justify-content-between d-flex">
+                                        <div class="user justify-content-between d-flex">
+                                            <div>
+                                                <img width="75" src="/static/base/img/user-image.png" alt="México">
+                                            </div>
+                                            <div class="desc">
+                                                <b>
+                                                    <p  style="color:#666666">
+                                                        Cesar Luis Hurtado
+                                                    </p>
+                                                </b>
+                                                <div class="rating">
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                    <a href="#"><img src="/static/base/img/icon/color_star.svg" alt=""></a>
+                                                </div>
+                                                <p class="comment">
+                                                </p>
+                                                <p>Aprende desde Ecuador:
+                                                    <img width="40" src="/static/base/img/ecuador.png" alt="ecuador">
+                                                </p>                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="content_wrapper">
+                    <div class="blog_details">
+                        <div class="content">
+                            <div class="title">
+                                <img height="117" src="/static/base/img/learn.png" alt="">
+                            </div>
+                            <h3 class="title">¿ QUÉ APRENDERÁS <br> EN 2 MESES ?</h3>
+                            <p>
+                                <ul class="unordered-list" style="font-size:1.1rem">
+                                    <div class="title">
+                                        <img height="80" src="/static/base/img/python_logo.png" alt="">
+                                    </div>
+                                    <li style="margin:5px">Aplicar y trabajar con el lenguaje de programación Python </li>
+                                    <hr>
+                                    <div class="title">
+                                        <img height="80" src="/static/base/img/solve_problem.png" alt="">
+                                    </div>
+                                    <li style="margin:5px">Resolver problemas y crear soluciones en cualquier área profesional desarrollando proyectos y algoritmos con Python. </li>
+                                    <hr>
+                                <br>
+
+                                    <div class="title">
+                                        <img height="80" src="/static/base/img/scale_project.png" alt="">
+                                    </div>
+                                    <li style="margin:5px">Escalar tus proyectos reutilizando módulos creados por la comunidad con PIP</li>
+                                    <hr>
+                                    <div class="title">
+                                        <img height="80" src="/static/base/img/git_logo.png" alt="">
+                                    </div>
+                                    <li style="margin:5px">Usar Git el sistema de control de versiones más populares del mundo </li>
+                                    <hr>
+                                    <div class="title">
+                                        <img height="80" src="/static/base/img/multiplataforma.png" alt="">
+                                    </div>
+                                    <li style="margin:5px">Desarrollo de software multiplataforma <br/> (Windows/Linux/MAC) </li>
+                                    <hr>
+                                    <div class="title">
+                                        <img height="80" src="/static/base/img/crawler.png" alt="">
+                                    </div>
+                                    <li style="margin:5px">Web Scraping & Crawler (arañas web). <br>(Framework Scrapy, BeautifulSoup, Requests, Re)</li>
+                                    <hr>
+                                    <div class="title">
+                                        <img height="80" src="/static/base/img/api.png" alt="">
+                                    </div>
+                                    <li style="margin:5px">Crear y Consumir APIs. <br/> (Libreria Requests)</li>
+                                    <hr>
+
+                                    <div class="title">
+                                        <img height="80" src="/static/base/img/robot.png" alt="">
+                                    </div>
+                                    <li style="margin:5px">Bots, automatización y scripting.</li>
+
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br>
+                <div class="content_wrapper">
+                    <div class="blog_details">
+                        <div class="content">
+                            <div class="title">
+                                <img height="80" src="/static/base/img/computer.png" alt="">
+                            </div>
+                            <h3 class="title">¿ REQUISITOS ANTES DE INICIAR ?</h3>
+                            <p>
+                                <ul class="unordered-list" style="font-size:1.1rem">
+                                    <li style="margin:5px">Laptop & Computadora</li>
+                                    <li style="margin:5px">Internet Estable</li>
+                                    <li style="margin:5px">Auriculares con micrófonos para Live Coding y videollamada</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                {% include "fecha_inicio.html" %}
+
+                <br>
+            </div>
+
+
+
+                <div class="col-lg-5 right-contents">
+
+                    <div class="blog_details">
+                        <h3 class="title"  style="font-size:1.5rem; padding:7px; text-align:center">
+                            ¿QUÉ INCLUYE ESTA MENTORÍA?
+                         </h3>
+
+                        <ul class="unordered-list">
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">
+                                    Mentorías dinámicas con aprendizaje grupal y personalizado. <br> (máximo 7 alumnos por videollamada Skype).
+                                </p>
+                            </li>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Acceso 24/7 a la plataforma de proyectos, código y videos exclusivos.</p>
+                            </li>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Aprende creando proyectos reales.</p>
+                            </li>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Mentoría durante 5 meses <br> (Mentoría & videollamada & Plataforma) </p>
+                                <ul class="unordered-list">
+                                    <li style="font-size:1.1rem;color:#666666"> 4 sesiones mensual </li>
+                                    <li style="font-size:1.1rem;color:#666666"> 1 sesión de 3 horas(break de 15m) a la semana</li>
+                                    <li style="font-size:1.1rem;color:#666666"> 12 horas de mentoring mensual</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Al culminar la mentoría de 5 meses obtendrás tu propio BLOG inspirado en Medium con integracion de Pasarelas de Pago para tu portafolio o uso personal. </p>
+                            </li>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Al culminar la mentoría de 5 meses obtendrás tu propio Ecommerce basado en Python/django con multiples Pasarelas de Pago. </p>
+                            </li>
+                            <li>
+                                <p style="font-size:1.1rem; margin:5px">Mentalidad Startup </p>
+                            </li>
+                            <div>
+                                <li>
+                                    <p style="font-size:1.1rem; margin:5px">Certificado digital al culminar mentoría <br>
+                                </li>
+                                <a target="_blank" href="/static/base/files/certificado-oficial.pdf">Ver Certificado</a>
+                                <a target="_blank" href="/static/base/files/certificado-oficial.pdf">
+                                    <img height="250" src="/static/base/img/certi.png" alt="">
+                                </a>
+                                </p>
+                            </div>
+
+                        </ul>
+                        <br>
+                        <a href="/contacto" class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
+                            <b>
+                                INSCRIBIRME AHORA
+                            </b>
+                        </a>
+                    </div>
+
+                    <br><br>
+
+
+                </div>
+
+        </div>
+
+        <div class="content_wrapper">
+            <div class="blog_details">
+                <div class="content">
+                    <div class="title">
+                        <img height="85" src="/static/base/img/mentor_mentor.png" alt="">
+                    </div>
+                    <h3 class="title">¿ YA PROGRAMAS EN PYTHON Y QUIERES SER MENTOR ?</h3>
+                    <p>
+                        <ul class="unordered-list" style="font-size:1.1rem">
+                            <li style="margin:5px">Dojopy está buscando programadores apasionados por la enseñanza que quieran generar un impacto en todo el mundo!</li>
+                            <li style="margin:5px">Si conoces lo básico de Python y no cubres todas las áreas que ofrecemos, Dojopy te mentorizara personalmente y continuamente. </li>
+                            <li style="margin:5px">No te preocupes por preparar contenido o plan de estudios, Dojopy se encarga de crear el contenido. </li>
+                            <li style="margin:5px">Obtenga valiosas experiencias y perfecciona tus habilidades personales y de enseñanza.</li>
+                            <li style="margin:5px">Sé un Mentor en Dojopy, inspira, motiva, brinda orientación a los nuevos programadores de todo el mundo!</li>
+                            <li style="margin:5px">Genera tus propios ingresos económicos con horarios flexibles</li>
+                        </ul>
+                    </p>
+                </div>
+                <a href="https://{{uri_whatsapp}}.whatsapp.com/send?phone=51935489552&text=Hola!%2C%20quiero%20convertirme%20en%20Mentor." class="btn_1 d-block" style="margin:10px;font-size:1.1rem;text-align:center">
+                    <b>
+                        Quiero Convertirme en Mentor
+                    </b>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+<!--================ End Course Details Area =================-->
+
+
+{% endblock %}
+
+{% block talleres %}
+{% endblock %}
+
+{% block info_dojopy %}
+{% endblock %}
+
+{% block stack_it %}
+{% endblock %}

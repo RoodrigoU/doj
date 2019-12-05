@@ -8,6 +8,7 @@ urlpatterns = [
     path('contacto', csrf_exempt(views.contact), name='contact'),
     path('', include('startup.urls')),
     path('startup/', include('startup.urls')),
+    path('mentor', include('mentor.urls')),
     path('@', include('mentor.urls')),
     path('blog', include('blog.urls')),
     path('shop', include('shop.urls')),

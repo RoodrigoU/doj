@@ -4,6 +4,29 @@ from .models import ModelAlumno
 from modules.detect_currency_country import *
 
 
+def python_mentor(request):
+    mobile = False
+    mount, simbol, country_code = get_mount_for_county(request)
+    try:
+        mobile = request.user_agent.is_mobile
+    except:
+        pass
+    if mobile:
+        uri_whatsapp = "api"
+        return render(request, 'python_mentor.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': mount,
+            'simbol': simbol,
+            'country_flag': country_code.lower()})
+    else:
+        uri_whatsapp = "web"
+        return render(request, 'python_mentor.html', {'uri_whatsapp': uri_whatsapp,
+         'uri_whatsapp': uri_whatsapp,
+           'mount': mount,
+            'simbol': simbol,
+            'country_flag': country_code.lower()})  #country_code.lower()
+
+
 def certificate(request, name_url):
     mobile = False
     try:

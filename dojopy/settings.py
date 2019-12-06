@@ -15,11 +15,11 @@ SECRET_KEY = '(!r^z5en6442+ejy$jzz1$#81^jfmdw-v(q#=332@9n%@z4jfv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if 'dojopy' == platform.uname()[1].lower().strip():
-    DEBUG = True
+    DEBUG = False
     PK_CULQI = 'pk_test_QfmMu2RtRgv6TEtg'
     SK_CULQI = 'sk_test_P92zyYskVlMZ3KqD'
 else:
-    DEBUG = False
+    DEBUG = True
     PK_CULQI = 'pk_live_4Wj2lCKn5nLEIX4s'
     SK_CULQI = 'sk_live_RQI8nAhBzsF9sluD'
 
@@ -121,9 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'es-es'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'America/Lima'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 

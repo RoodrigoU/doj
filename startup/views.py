@@ -5,6 +5,9 @@ from .models import (
                         ModelPagoEfectivo,
                         ModelIps
                           )
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 from django.http import JsonResponse
 import culqipy
 from uuid import uuid4
@@ -15,6 +18,8 @@ import requests
 from modules.detect_currency_country import *
 from django.conf import settings
 
+
+SENDGRID_API_KEY='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'
 
 ModelIps.objects.all().delete()
 logzero.logfile("/tmp/django.log", maxBytes=1e6, backupCount=3)
@@ -87,6 +92,20 @@ def contact(request):
                 message=message,
                 country=country_code
                 )
+        message = Mail(
+        from_email='rod.pyc@gmail.com',
+        to_emails=['rod.pyc@gmail.com','Lifehack.py@gmail.com'],
+        subject='Posible Alumno {}'.format(name),
+        html_content="""<strong>que onda pys. Tenemos a {} su Whatapps es: {}
+                     <br/> Su correo es {}</strong>""".format(name, phone, email))
+        try:
+            sg = SendGridAPIClient(SENDGRID_API_KEY)
+            response = sg.send(message)
+            print(response.status_code)
+            print(response.body)
+            print(response.headers)
+        except Exception as e:
+            print(e)
         return JsonResponse({'status': 'ok'})
     elif request.method == "GET":
         return render(request, 'contacto.html', {'uri_whatsapp': uri_whatsapp})

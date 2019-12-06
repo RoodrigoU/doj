@@ -4,3 +4,4 @@
 *~
 celerybeat-schedule
 celerybeat.pid
+/env/

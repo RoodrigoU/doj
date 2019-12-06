@@ -62,6 +62,11 @@ def python_startup(request):
 
 def contact(request):
     mobile = False
+    country_code = ''
+    try:
+        mount, simbol, country_code = get_mount_for_county(request)
+    except Exception as e:
+        pass
     try:
         mobile = request.user_agent.is_mobile
     except Exception as e:
@@ -79,7 +84,8 @@ def contact(request):
                 name=name,
                 email=email,
                 phone=phone,
-                message=message
+                message=message,
+                country=country_code
                 )
         return JsonResponse({'status': 'ok'})
     elif request.method == "GET":
